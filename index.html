@@ -7,16 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css">
+    <script src="https://cdn.jsdelivr.net/npm/embla-carousel/embla-carousel.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
 <!-- navbar -->
-<div class="navbar shadow-md w-[65%] fixed z-100 left-1/2 top-2 -translate-x-1/2 rounded-2xl px-3 !py-2 !min-h-12 glassmorphism">
+<div class="navbar shadow-md sm:w-[65%] fixed z-100 left-1/2 top-2 -translate-x-1/2 rounded-2xl px-3 !py-2 !min-h-12 glassmorphism">
   <div class="navbar-start">
     <div class="dropdown">
      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -64,37 +66,37 @@
 
 <!-- first content -->
 <div class="hero min-h-screen">
-  <div class="hero-content text-center">
-    <div class="max-w-md flex flex-col gap-36">
-        <div class="py-6 px-7 rounded-md bg-slate-50 shadow-md text-start -translate-x-1/3 rotate-[-10deg]">
-            <h1 class="text-3xl info-grafis-utama mb-2 font-medium">Okt 2007</h1>
+  <div class="hero-content h-full pt-20 md:pt-0 flex flex-col md:flex-row text-center justify-around">
+    <div class="max-w-md flex flex-row md:flex-col md:gap-36 order-1 md:order-0 px-3 ">
+        <div class="py-2 px-3 sm:py-4 sm:px-5 md:py-6 md:px-7 rounded-md bg-slate-50 shadow-md text-start -translate-x-1/3 rotate-[-10deg]">
+            <h1 class="text-xl sm:text-2xl md:text-3xl info-grafis-utama mb-2 font-medium">Okt 2007</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar inline-block text-blue-400"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-            <p class="text-sm inline-block">Tahun berdiri</p>
+            <p class="text-xs md:text-sm inline-block">Tahun berdiri</p>
         </div>
-        <div class="py-6 px-7 rounded-md bg-slate-50 shadow-md text-start translate-1/3 rotate-[10deg]">
-            <h1 class="text-3xl info-grafis-utama mb-2 font-medium">1 juta ++</h1>
+        <div class="py-2 px-3 sm:py-4 sm:px-5 md:py-6 md:px-7 rounded-md bg-slate-50 shadow-md text-start translate-x-1/4 md:translate-1/3 rotate-[10deg]">
+            <h1 class="text-xl sm:text-2xl md:text-3xl info-grafis-utama mb-2 font-medium">1 juta ++</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart text-blue-400 inline-block"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
-            <p class="text-sm inline-block">Pengunjung setia</p>
+            <p class="text-xs md:text-sm inline-block">Pengunjung setia</p>
         </div>
     </div>
-    <div class="max-w-xl">
-      <h1 class="text-5xl font-semibold info-grafis-utama" id="typed"></h1>
+    <div class="max-w-xl order-3 md:order-2">
+      <h1 class="text-3xl md:text-5xl min-h-26 font-semibold info-grafis-utama" id="typed"></h1>
       <p class="py-6 text-sm">
         Satu klik di Grow bisa bantu usaha kecil jadi besar, dan produk lokal jadi kebanggaan nasional.
       </p>
       <button class="bg-blue-400 px-3 py-2.5 rounded-3xl text-white text-sm  shadow-sm cursor-pointer">Temukan sekarang</button>
       <button class="border-1 border-blue-400 text-blue-400 px-3 py-2.5 rounded-3xl text-sm shadow-sm cursor-pointer">Selengkapnya</button>
     </div>
-    <div class="max-w-md flex flex-col gap-20">
-        <div class="py-6 px-7 rounded-md bg-slate-50 shadow-md text-start rotate-[20deg]">
-            <h1 class="text-3xl info-grafis-utama mb-2 font-medium">15 ribu ++</h1>
+    <div class="max-w-md flex flex-row md:flex-col gap-5 md:gap-20 order-2 md:order-3">
+        <div class="py-2 px-3 sm:py-4 sm:px-5 md:py-6 md:px-7 rounded-md bg-slate-50 shadow-md text-start translate-y-1/2 md:translate-y-0 rotate-[20deg]">
+            <h1 class="text-xl sm:text-2xl md:text-3xl" info-grafis-utama mb-2 font-medium">15 ribu ++</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-store-icon lucide-store text-blue-400 inline-block"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>
-            <p class="text-sm inline-block">UMKM terdaftar</p>
+            <p class="text-xs md:text-sm inline-block">UMKM terdaftar</p>
         </div>
-        <div class="py-6 px-7 rounded-md bg-slate-50 shadow-md text-start translate-1/3 rotate-[-5deg]">
-            <h1 class="text-3xl info-grafis-utama mb-2 font-medium">34 prov</h1>
+        <div class="py-2 px-3 sm:py-4 sm:px-5 md:py-6 md:px-7 rounded-md bg-slate-50 shadow-md text-start translate-x-1/5 md:translate-1/3 rotate-[-5deg]">
+            <h1 class="text-xl sm:text-2xl md:text-3xl info-grafis-utama mb-2 font-medium">34 prov</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin text-blue-400 inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-            <p class="text-sm inline-block">Lokasi terdaftar</p>
+            <p class="text-xs md:text-sm inline-block">Lokasi terdaftar</p>
         </div>
     </div>
   </div>
@@ -103,10 +105,10 @@
 <!-- second content -->
 <div class="hero min-h-screen">
   <div class="hero-content flex flex-col items-center gap-0">
-    <div class="flex gap-4">
+    <div class="flex flex-col md:flex-row gap-4">
     <div class="join">
       <div>
-        <label class="input join-item w-[25rem] border-blue-400 focus-within:outline-none focus-within:ring-0">
+        <label class="input join-item w-[15rem] md:w-[25rem] border-blue-400 focus-within:outline-none focus-within:ring-0">
           <input type="text" class="!focus:ring-0 !focus:outline-none placeholder-gray-400"  placeholder="Masukan lokasi / barang / makanan / pariwisata" required />
         </label>
       </div>
@@ -120,48 +122,48 @@
       Lokasi
     </button>
     </div>
-    <div class="w-full mt-5 h-[160px]">
+    <div class="w-full mt-5 min-h-[160px]">
       <h1 class="text-xl font-medium">Kategory</h1>
       <div class="flex flex-wrap">
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/elektronik-new.jpg" class="w-full mx-auto object-cover" alt="">
-          <p class="text-sm mt-2">Elektronik</p>
+          <p class="text-xs md:text-sm mt-2">Elektronik</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/makanan.jpg" class="w-[60%] rounded-xl mx-auto aspect-1/1 object-cover object-right" alt="">
-          <p class="text-sm mt-2">Makanan</p>
+          <p class="text-xs md:text-sm mt-2">Makanan</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/minuman.png" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2">Minuman</p>
+          <p class="text-xs md:text-sm mt-2">Minuman</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/pakaian.webp" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2">Pakaian</p>
+          <p class="text-xs md:text-sm mt-2">Pakaian</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/perawatan kecantikan.webp" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2 leading-4.5">Perawatan & kecantikan</p>
+          <p class="text-xs md:text-sm mt-2 leading-4.5">Perawatan & kecantikan</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/peralatan sekolah.png" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2 leading-4.5">Peralatan sekolah</p>
+          <p class="text-xs md:text-sm mt-2 leading-4.5">Peralatan sekolah</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/kesehatan.jpg" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2">Kesehatan</p>
+          <p class="text-xs md:text-sm mt-2">Kesehatan</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/olahraga.avif" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2">Olahraga</p>
+          <p class="text-xs md:text-sm mt-2">Olahraga</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/otomotif.png" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2">Otomotif</p>
+          <p class="text-xs md:text-sm mt-2">Otomotif</p>
         </div>
-        <div class="w-1/10 aspect-3/4 p-1 text-center">
+        <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center">
           <img src="img/serba-ada.jpg" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
-          <p class="text-sm mt-2">Serba ada</p>
+          <p class="text-xs md:text-sm mt-2">Serba ada</p>
         </div>
       </div>
     </div>
@@ -169,99 +171,99 @@
       <h1 class="text-xl font-medium">Terdekat</h1>
       <div class="flex flex-wrap gap-2 mt-2 overflow-hidden container-card" >
         <!-- card -->
-        <div class="w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
             <img src="img/umkm/mentai.jpeg" class="w-full h-full object-cover rounded-md" alt="">
-            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-xs">UMKM</div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
-          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-xs font-bold info-grafis-utama">Makanan</button>
-          <h1 class="text-md font-semibold">Suki mentai</h1>
-          <p class="text-xs inline-block">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Suki mentai</h1>
+          <p class="text-[9px] md:text-xs inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
           </p>
-          <ul class="text-xs list-disc ml-3.5">
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
             <li >Gyoza</li>
             <li>Dimsum Mentai</li>
             <li class="list-none leading-2 tracking-wider">.....</li>
           </ul>
-          <div class="flex justify-between mt-2 px-1">
-            <h3 class="text-2xl text-gray-700 font-bold">
-              <span class="text-sm font-semibold">Rp</span>20.000 - 40.000</h3>
-            <button class="text-xs font-medium text-white tracking-wide px-3.5 h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
           </div>
           </div>
         </div>
-        <div class="w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
             <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
-            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-xs">UMKM</div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
-          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-xs font-bold info-grafis-utama">Peralatan Sekolah</button>
-          <h1 class="text-md font-semibold">Toko Ahabba</h1>
-          <p class="text-xs inline-block">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Peralatan Sekolah</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Ahabba</h1>
+          <p class="text-[9px] md:text-xs inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)
           </p>
-          <ul class="text-xs list-disc ml-3.5">
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
             <li>Buku & Buku gambar</li>
             <li>Pensil & Pulpen</li>
             <li class="list-none leading-2 tracking-wider">.....</li>
           </ul>
-          <div class="flex justify-between mt-2 px-1">
-            <h3 class="text-2xl text-gray-700 font-bold">
-              <span class="text-sm font-semibold">Rp</span>5.000 - 76.000</h3>
-            <button class="text-xs font-medium text-white tracking-wide px-3.5 h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>5.000 - 76.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
           </div>
         </div>
         </div>
-        <div class="w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
             <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
-            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-xs">UMKM</div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
-          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-xs font-bold info-grafis-utama">Makanan</button>
-          <h1 class="text-md font-semibold">Toko Bahan Kue Pelangi</h1>
-          <p class="text-xs inline-block">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Bahan Kue Pelangi</h1>
+          <p class="text-[9px] md:text-xs inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)
           </p>
-          <ul class="text-xs list-disc ml-3.5">
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
             <li>Tepung</li>
             <li>Selai</li>
             <li class="list-none leading-2 tracking-wider">.....</li>
           </ul>
-          <div class="flex justify-between mt-2 px-1">
-            <h3 class="text-2xl text-gray-700 font-bold">
-              <span class="text-sm font-semibold">Rp</span>2.000 - 100.000</h3>
-            <button class="text-xs font-medium text-white tracking-wide px-3.5 h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>2.000 - 100.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
           </div>
         </div>
         </div>
-        <div class="w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
             <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
-            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-xs">UMKM</div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
-          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-xs font-bold info-grafis-utama">Makanan</button>
-          <h1 class="text-md font-semibold">Mie Ayam Syahdu</h1>
-          <p class="text-xs inline-block">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Mie Ayam Syahdu</h1>
+          <p class="text-[9px] md:text-xs inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)
           </p>
-          <ul class="text-xs list-disc ml-3.5">
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
             <li>Mie ayam original</li>
             <li>Mie ayam bakso</li>
             <li class="list-none leading-2 tracking-wider">.....</li>
           </ul>
-          <div class="flex justify-between mt-2 px-1">
-            <h3 class="text-2xl text-gray-700 font-bold">
-              <span class="text-sm font-semibold">Rp</span>10.000 - 25.000</h3>
-            <button class="text-xs font-medium text-white tracking-wide px-3.5 h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>10.000 - 25.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
           </div>
         </div>
         </div>
@@ -275,10 +277,407 @@
   </div>
 </div>
 
+<!-- discon content -->
+ <div class="hero min-h-screen w-full">
+  <div class="hero-content flex flex-col w-full overflow-hidden">
+    <div class="w-full gap-1.5 flex flex-col md:flex-row bg-[url('img/bg.png')] bg-cover bg-center rounded-lg py-2">
+      <div class="w-full md:w-[calc(25%-6px)] px-2">
+        <h1 class="text-xl font-bold text-gray-800 info-grafis-utama">UMKM Baru<span class="block text-4xl text-blue-500 leading-7">Diskon Spesial! </span></h1>
+        <img src="img/gif kado.gif" class="my-4 w-10" alt="">
+        <p class="text-xs font-medium text-gray-800">Dukung UMKM baru dan nikmati potongan harga spesial minggu ini</p>
+        <h3 class="text-xl font-semibold text-gray-800 mt-3">Diskon hingga <span class="text-5xl text-blue-500 block leading-9 font-bold">30%</span></h3>
+        <button class="px-4 py-2 mt-4 rounded-full bg-white text-blue-500 font-semibold shadow-sm text-sm cursor-pointer" onclick="my_modal_3.showModal()">ambil kupon</button>
+        <div class="w-full flex justify-end gap-1">
+          <button class="btn rounded-full px-2 bg-white text-blue-500 shadow-md arrow left"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>  
+          </button>
+           <button class="btn rounded-full px-2 bg-white text-blue-500 shadow-md arrow right"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>  
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:w-[calc(75%-6px)] flex flex-row items-start gap-2 px-1 overflow-hidden" id="containerCardDiscount">
+        <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mentai.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Suki mentai</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li >Gyoza</li>
+            <li>Dimsum Mentai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+          </div>
+        </div>
+        <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Peralatan Sekolah</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Ahabba</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Buku & Buku gambar</li>
+            <li>Pensil & Pulpen</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>5.000 - 76.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Bahan Kue Pelangi</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Tepung</li>
+            <li>Selai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>2.000 - 100.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Mie Ayam Syahdu</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Mie ayam original</li>
+            <li>Mie ayam bakso</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>10.000 - 25.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Peralatan Sekolah</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Ahabba</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Buku & Buku gambar</li>
+            <li>Pensil & Pulpen</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>5.000 - 76.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mentai.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Suki mentai</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li >Gyoza</li>
+            <li>Dimsum Mentai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="w-full">
+      <h1 class="text-xl font-medium">Terlaris <img src="img/gif fire.gif" class="inline-block -mt-1.5 w-5" alt=""></h1>
+      <div class="flex flex-wrap gap-2 mt-2 overflow-hidden container-card" >
+        <!-- card -->
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mentai.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
+              <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
+            </div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Suki mentai</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li >Gyoza</li>
+            <li>Dimsum Mentai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+          </div>
+        </div>
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+           <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
+              <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
+            </div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Peralatan Sekolah</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Ahabba</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Buku & Buku gambar</li>
+            <li>Pensil & Pulpen</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>5.000 - 76.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
+              <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
+            </div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Bahan Kue Pelangi</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Tepung</li>
+            <li>Selai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>2.000 - 100.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
+              <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
+            </div>
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Mie Ayam Syahdu</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Mie ayam original</li>
+            <li>Mie ayam bakso</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>10.000 - 25.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="w-full flex justify-center mt-1">
+        <button class="text-sm cursor-pointer button-lebih-banyak terlaris">
+          Lebih banyak <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <h1 class="text-2xl font-semibold">Semua</h1>
+      <div class="flex flex-wrap gap-2 mt-2 overflow-hidden container-card" >
+        <!-- card -->
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mentai.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Suki mentai</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li >Gyoza</li>
+            <li>Dimsum Mentai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+          </div>
+        </div>
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Peralatan Sekolah</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Ahabba</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Buku & Buku gambar</li>
+            <li>Pensil & Pulpen</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>5.000 - 76.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Toko Bahan Kue Pelangi</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Tepung</li>
+            <li>Selai</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>2.000 - 100.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
+          <div class="w-full aspect-video relative">
+            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
+          </div>
+          <div class="w-full px-1">
+          <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
+          <h1 class="text-sm md:text-md font-semibold">Mie Ayam Syahdu</h1>
+          <p class="text-[9px] md:text-xs inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)
+          </p>
+          <ul class="text-[9px] md:text-xs list-disc ml-3.5">
+            <li>Mie ayam original</li>
+            <li>Mie ayam bakso</li>
+            <li class="list-none leading-2 tracking-wider">.....</li>
+          </ul>
+          <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
+            <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>10.000 - 25.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="w-full flex justify-center mt-1">
+        <button class="text-sm cursor-pointer button-lebih-banyak">
+          Lebih banyak <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+ </div>
+
 <!-- about content -->
-<div class="hero min-h-screen w-full">
-  <div class="flex w-11/12">
-    <div class="w-1/2 flex flex-col px-1">
+<div class="hero min-h-screen w-full my-4">
+  <div class="hero-content flex flex-col md:flex-row w-full md:w-11/12">
+    <div class="w-full md:w-1/2 flex flex-col px-1 order-2 md:order-1">
       <div class="">
         <h3 class="text-sm text-blue-400">Tentang kami</h3>
         <h1 class="info-grafis-about font-semibold text-4xl">GROW UMKM</h1>
@@ -301,24 +700,24 @@
         </ul>
       </div>
     </div>
-    <div class="w-1/2">
-      <div class="ml-auto w-[60%] aspect-3/4 relative">
+    <div class="w-full md:w-1/2 order-1 md:order-2">
+      <div class="ml-auto w-3/4 md:w-[60%] aspect-3/4 relative">
         <img src="img/foto-umkm.jpg" class="w-full h-full object-cover" alt="">
-        <div class="absolute left-0 top-1/4 -translate-x-3/4 p-5 bg-white rounded-xl shadow-sm">
-          <p class="text-[10px] text-gray-500 text-end">14.02 PM</p>
-          <div class="w-40 h-2 rounded-lg bg-gray-300 my-1"></div>
-          <div class="w-40 h-2 rounded-lg bg-gray-100"></div>
+        <div class="absolute left-0 top-1/4 -translate-x-3/4 p-2 md:p-5 bg-white rounded-xl shadow-sm">
+          <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
+          <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg my-1 skeleton"></div>
+          <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg bg-gray-100"></div>
         </div>
-        <div class="absolute left-0 top-1/2 -translate-x-1/2 p-5 bg-white rounded-xl shadow-sm">
-          <p class="text-[10px] text-gray-500 text-end">14.02 PM</p>
-          <div class="w-40 h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-1"></div>
+        <div class="absolute left-0 top-1/2 -translate-x-1/2 p-2 md:p-5 bg-white rounded-xl shadow-sm">
+          <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
+          <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-1"></div>
         </div>
-        <div class="absolute left-0 -bottom-2 -translate-x-1/4 p-5 bg-white rounded-xl text-center shadow-sm">
-          <h1 class="text-xs text-start font-semibold text-gray-600">Dukung UMKM Indonesia</h1>
-          <p class="text-[10px] text-gray-500 text-end">14.02 PM</p>
-          <div class="w-52 h-2 rounded-lg bg-gray-300 my-2"></div>
-          <div class="w-52 h-2 rounded-lg bg-gray-100"></div>
-          <button class="px-4 py-2.5 font-medium rounded-full bg-blue-400 text-xs text-white mt-3">Dukung sekarang</button>
+        <div class="absolute left-0 -bottom-2 -translate-x-1/4 p-2 md:p-5 bg-white rounded-xl text-center shadow-sm">
+          <h1 class="text-[10px] md:text-xs text-start font-semibold text-gray-600">Dukung UMKM Indonesia</h1>
+          <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
+          <div class="w-24 md:w-52 h-1 md:h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-2"></div>
+          <div class="w-24 md:w-52 h-1 md:h-2 rounded-lg bg-gray-100"></div>
+          <button class="px-2 md:px-4 skeleton [animation-duration:1.5s] [--tw-skeleton-opacity:0.2] py-1 md:py-2.5 font-medium rounded-full bg-blue-400 text-[8px] md:text-xs text-white mt-3">Dukung sekarang</button>
         </div>
       </div>
     </div>
@@ -326,65 +725,160 @@
 </div>
 
 <!-- contact content -->
-<div class="hero my-8 w-full">
-  <div class="hero-content flex flex-col w-full">
-    <button class="bg-blue-200 text-blue-500 px-2.5 py-1.5 rounded-2xl font-semiboldS text-xs">Hubungi Kami</button>
-    <h1 class="text-4xl font-bold">Ada pertanyaan? Yuk ngobrol!</h1>
-    <p class="text-xs leading-3.5 text-center">Tim kami siap membantu anda. Kirimkan pesan atau hubungi langsung melalui kontak <br> dibawah ini.</p>
-    <div class="w-11/12 bg-blue-400 py-5 text-center rounded-lg">
-      <h1 class="text-white text-2xl font-bold text-center">Terhubung dengan Kami</h1>
-      <p class="text-white text-xs mt-2">
-        Ikuti media sosial kami untuk update UMKM terbaru dan promo menarik !
-      </p>
-      <div class="flex gap-5 my-6 justify-center">
-        <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
-          <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto  lucide lucide-instagram-icon lucide-instagram inline-block"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+<div class="hero min-h-screen my-8 w-full">
+  <div class="hero-content flex flex-col w-full overflow-hidden">
+    <div class="w-full text-center">
+      <h1 class="text-4xl font-bold text-blue-400">Apa Kata Mereka Tentang <span class="text-black"> Kami</span></h1>
+      <p class="text-xs my-2">Para pengguna sudah merasakan kemudahan dan manfaat dari website kami. Yuk, <br> dengarkan pengalaman mereka!</p>
+      <div class="flex flex-col mt-7 gap-y-7 scroll-smooth">
+        <div class="flex gap-3 overflow-hidden container-card-reviews">
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana1</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-          <div class="text-start">
-            <h1 class="font-semibold text-sm">
-              Instagram
-            </h1>
-            <p class="text-[10px]">@GrowUMKM_id</p>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana2</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-        </button>
-        <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
-          <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana3</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-          <div class="text-start">
-            <h1 class="font-semibold text-sm">
-              Facebook
-            </h1>
-            <p class="text-[10px]">@GrowUMKM_id</p>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana4</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-        </button>
-        <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
-          <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-twitter-icon lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </div>
+        <div class="flex gap-3 overflow-hidden container-card-reviews">
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana1</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-          <div class="text-start">
-            <h1 class="font-semibold text-sm">
-              Twiter
-            </h1>
-            <p class="text-[10px]">@GrowUMKM_id</p>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana2</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-        </button>
-        <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
-          <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>  
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana3</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-          <div class="text-start">
-            <h1 class="font-semibold text-sm">
-              Linkedin
-            </h1>
-            <p class="text-[10px]">GrowUMKM_id</p>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana4</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+            </div>
           </div>
-        </button>
+        </div>
+        <h1 class="text-4xl font-bold mx-auto">Cerita Inspiratif <span class="text-blue-400">UMKM</span></h1>
+        <div class="flex flex-wrap gap-3">
+          <div class="w-[calc(50%-8px)] bg-red-200 h-30"></div>
+          <div class="w-[calc(50%-8px)] bg-red-200 h-30"></div>
+          <div class="w-[calc(50%-8px)] bg-red-200 h-30"></div>
+        </div>
       </div>
+
     </div>
+
+    <div class="hero-content flex flex-col w-full">
+      <button class="bg-blue-200 text-blue-500 px-2.5 py-1.5 rounded-2xl font-semiboldS text-xs">Hubungi Kami</button>
+      <h1 class="text-4xl font-bold">Ada pertanyaan? Yuk ngobrol!</h1>
+      <p class="text-xs leading-3.5 text-center">Tim kami siap membantu anda. Kirimkan pesan atau hubungi langsung melalui kontak <br> dibawah ini.</p>
+      <div class="w-11/12 bg-blue-400 py-5 text-center rounded-lg">
+        <h1 class="text-white text-2xl font-bold text-center">Terhubung dengan Kami</h1>
+        <p class="text-white text-xs mt-2">
+          Ikuti media sosial kami untuk update UMKM terbaru dan promo menarik !
+        </p>
+        <div class="flex gap-5 my-6 justify-center">
+          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+            <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto  lucide lucide-instagram-icon lucide-instagram inline-block"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </div>
+            <div class="text-start">
+              <h1 class="font-semibold text-sm">
+                Instagram
+              </h1>
+              <p class="text-[10px]">@GrowUMKM_id</p>
+            </div>
+          </button>
+          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+            <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <div class="text-start">
+              <h1 class="font-semibold text-sm">
+                Facebook
+              </h1>
+              <p class="text-[10px]">@GrowUMKM_id</p>
+            </div>
+          </button>
+          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+            <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-twitter-icon lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </div>
+            <div class="text-start">
+              <h1 class="font-semibold text-sm">
+                Twiter
+              </h1>
+              <p class="text-[10px]">@GrowUMKM_id</p>
+            </div>
+          </button>
+          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+            <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>  
+            </div>
+            <div class="text-start">
+              <h1 class="font-semibold text-sm">
+                Linkedin
+              </h1>
+              <p class="text-[10px]">GrowUMKM_id</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>  
   </div>
 </div>
+
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box flex flex-col items-center">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="text-3xl font-bold">Ambil kuponmu</h3>
+    <img src="img/kupon.jpg" alt="">
+    <button class="btn bg-blue-400 rounded-full  text-white">Download kupon</button>
+  </div>
+</dialog>
 
 <footer class="footer sm:footer-horizontal bg-blue-900 text-neutral-content p-10">
   <nav>
