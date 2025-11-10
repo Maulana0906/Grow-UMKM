@@ -83,3 +83,24 @@ backdrop-filter: blur(1.1px);
 -webkit-backdrop-filter: blur(1.3px);
 border: 1px solid rgba(255, 255, 255, 0.397);
 }
+.grid-sizer,
+.grid-item {
+  width: 25%; 
+}
+
+.grid-item{
+  padding: 20px;
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+} 
+#coloring{
+  background: #ffffff;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.473) 100%);
+}
+*{
+  scroll-behavior: smooth;
+}

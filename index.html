@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -60,12 +64,12 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="bg-blue-400 px-3 py-2 rounded-3xl text-white text-sm font-semibold shadow-sm cursor-pointer">Bergabung</a>
+    <a class="bg-blue-400 px-3 py-2 rounded-3xl text-white text-sm font-semibold shadow-sm cursor-pointer" data-name="login" onclick="openModal(this)">Bergabung</a>
   </div>
 </div>
 
 <!-- first content -->
-<div class="hero min-h-screen">
+<div class="hero min-h-screen bg-green-100">
   <div class="hero-content h-full pt-20 md:pt-0 flex flex-col md:flex-row text-center justify-around">
     <div class="max-w-md flex flex-row md:flex-col md:gap-36 order-1 md:order-0 px-3 ">
         <div class="py-2 px-3 sm:py-4 sm:px-5 md:py-6 md:px-7 rounded-md bg-slate-50 shadow-md text-start -translate-x-1/3 rotate-[-10deg]">
@@ -84,8 +88,12 @@
       <p class="py-6 text-sm">
         Satu klik di Grow bisa bantu usaha kecil jadi besar, dan produk lokal jadi kebanggaan nasional.
       </p>
-      <button class="bg-blue-400 px-3 py-2.5 rounded-3xl text-white text-sm  shadow-sm cursor-pointer">Temukan sekarang</button>
-      <button class="border-1 border-blue-400 text-blue-400 px-3 py-2.5 rounded-3xl text-sm shadow-sm cursor-pointer">Selengkapnya</button>
+      <a href="#containerFirstContent">
+        <button class="bg-blue-400 px-3 py-2.5 rounded-3xl text-white text-sm  shadow-sm cursor-pointer">Temukan sekarang</button>
+      </a>
+      <a href="#containerAbout">
+        <button class="border-1 border-blue-400 text-blue-400 px-3 py-2.5 rounded-3xl text-sm shadow-sm cursor-pointer">Selengkapnya</button>
+      </a>
     </div>
     <div class="max-w-md flex flex-row md:flex-col gap-5 md:gap-20 order-2 md:order-3">
         <div class="py-2 px-3 sm:py-4 sm:px-5 md:py-6 md:px-7 rounded-md bg-slate-50 shadow-md text-start translate-y-1/2 md:translate-y-0 rotate-[20deg]">
@@ -103,7 +111,7 @@
 </div>
 
 <!-- second content -->
-<div class="hero min-h-screen">
+<div class="hero min-h-screen" id="containerbFirstContent">
   <div class="hero-content flex flex-col items-center gap-0">
     <div class="flex flex-col md:flex-row gap-4">
     <div class="join">
@@ -117,7 +125,7 @@
         Search 
       </button>
     </div>
-    <button class="btn bg-white border-1 border-blue-400 text-[16px] text-blue-400 px-7 rounded-xl hover:bg-blue-400 hover:text-white">
+    <button class="btn bg-white border-1 border-blue-400 text-[16px] text-blue-400 px-7 rounded-xl hover:bg-blue-400 hover:text-white" data-name="get-location" onclick="openModal(this)">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
       Lokasi
     </button>
@@ -169,7 +177,7 @@
     </div>
     <div class="w-full">
       <h1 class="text-xl font-medium">Terdekat</h1>
-      <div class="flex flex-wrap gap-2 mt-2 overflow-hidden container-card" >
+      <div class="flex flex-wrap gap-2 mt-2 overflow-hidden container-card">
         <!-- card -->
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
@@ -191,7 +199,7 @@
           <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
             <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
               <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
-            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer" data-name="get-detail" onclick="openModal(this)">Detail</button>
           </div>
           </div>
         </div>
@@ -286,7 +294,7 @@
         <img src="img/gif kado.gif" class="my-4 w-10" alt="">
         <p class="text-xs font-medium text-gray-800">Dukung UMKM baru dan nikmati potongan harga spesial minggu ini</p>
         <h3 class="text-xl font-semibold text-gray-800 mt-3">Diskon hingga <span class="text-5xl text-blue-500 block leading-9 font-bold">30%</span></h3>
-        <button class="px-4 py-2 mt-4 rounded-full bg-white text-blue-500 font-semibold shadow-sm text-sm cursor-pointer" onclick="my_modal_3.showModal()">ambil kupon</button>
+        <button class="px-4 py-2 mt-4 rounded-full bg-white text-blue-500 font-semibold shadow-sm text-sm cursor-pointer" data-name="get-discount" onclick="openModal(this)">ambil kupon</button>
         <div class="w-full flex justify-end gap-1">
           <button class="btn rounded-full px-2 bg-white text-blue-500 shadow-md arrow left"> 
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>  
@@ -674,53 +682,124 @@
   </div>
  </div>
 
-<!-- about content -->
-<div class="hero min-h-screen w-full my-4">
-  <div class="hero-content flex flex-col md:flex-row w-full md:w-11/12">
-    <div class="w-full md:w-1/2 flex flex-col px-1 order-2 md:order-1">
-      <div class="">
-        <h3 class="text-sm text-blue-400">Tentang kami</h3>
-        <h1 class="info-grafis-about font-semibold text-4xl">GROW UMKM</h1>
-        <p class="text-xs"> <span class="text-blue-400">&nbsp; Grow UMKM</span> adalah sebuah platform digital yang dirancang untuk memberdayakan pelaku UMKM di seluruh Indonesia melalui promosi,
-            peta lokasi usaha, dan data interaktif yang mempertemukan mereka dengan konsumen lokal.</p>
-        <p class="text-xs my-1">&nbsp; Dengan Grow, setiap UMKM dapat menampilkan produk, lokasi, dan cerita usahanya agar lebih mudah dikenal masyarakat, tanpa harus memiliki kemampuan teknis tinggi atau biaya promosi besar.
-        </p>
-        <p class="text-xs">&nbsp; Grow hadir bukan sekadar etalase online, tetapi juga sebagai jembatan digital yang menghubungkan usaha kecil dengan peluang besar — memperluas jangkauan, memperkuat ekonomi lokal, dan menumbuhkan kebanggaan terhadap produk dalam negeri.
-        </p>
+<!-- about content -->  
+<div class="hero min-h-screen w-full my-4" id="containerAbout">
+  <div class="hero-content w-full flex flex-col">
+    <!-- 1 -->
+    <div class="flex flex-col md:flex-row w-full">
+      <div class="w-full md:w-1/2 flex flex-col px-1 order-2 md:order-1">
+        <div class="">
+          <h3 class="text-sm text-blue-400">Tentang kami</h3>
+          <h1 class="info-grafis-about font-semibold text-4xl">GROW UMKM</h1>
+          <p class="text-xs md:text-[13px]"> <span class="text-blue-400">&nbsp; Grow UMKM</span> adalah sebuah platform digital yang dirancang untuk memberdayakan pelaku UMKM di seluruh Indonesia melalui promosi,
+              peta lokasi usaha, dan data interaktif yang mempertemukan mereka dengan konsumen lokal.</p>
+          <p class="text-xs md:text-[13px] my-1">&nbsp; Dengan Grow, setiap UMKM dapat menampilkan produk, lokasi, dan cerita usahanya agar lebih mudah dikenal masyarakat, tanpa harus memiliki kemampuan teknis tinggi atau biaya promosi besar.
+          </p>
+          <p class="text-xs md:text-[13px]">&nbsp; Grow hadir bukan sekadar etalase online, tetapi juga sebagai jembatan digital yang menghubungkan usaha kecil dengan peluang besar — memperluas jangkauan, memperkuat ekonomi lokal, dan menumbuhkan kebanggaan terhadap produk dalam negeri.
+          </p>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-sm text-blue-400">Visi Misi</h3>
+          <h1 class="info-grafis-about font-semibold text-4xl">Bertumbuh dan Makmur UMKM Indonesia</h1>
+          <p class="text-xs md:text-[13px] my-1">&nbsp; Menjadi platform digital yang menumbuhkan dan memakmurkan UMKM Indonesia agar berdaya saing di era ekonomi digital.</p>
+          <ul class="text-xs md:text-[13px] mt-2">
+            <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Memberdayakan Pelaku UMKM</li>
+            <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Memperluas jangkauan pasar lokal</li>
+            <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Membangun ekosistem kolaboratif</li>
+            <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Menstabilkan ekonomi Indonesia</li>
+          </ul>
+        </div>
       </div>
-      <div class="mt-5">
-        <h3 class="text-sm text-blue-400">Visi Misi</h3>
-        <h1 class="info-grafis-about font-semibold text-4xl">Bertumbuh dan Makmur UMKM Indonesia</h1>
-        <p class="text-xs my-1">&nbsp; Menjadi platform digital yang menumbuhkan dan memakmurkan UMKM Indonesia agar berdaya saing di era ekonomi digital.</p>
-        <ul class="text-xs mt-2">
-          <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Memberdayakan Pelaku UMKM</li>
-          <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Memperluas jangkauan pasar lokal</li>
-          <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Membangun ekosistem kolaboratif</li>
-          <li class="my-1"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 inline-block lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Menstabilkan ekonomi Indonesia</li>
-        </ul>
+      <div class="w-full md:w-1/2 order-1 md:order-2">
+        <div class="ml-auto w-3/4 md:w-[60%] aspect-3/4 relative">
+          <img src="img/foto-umkm.jpg" class="w-full h-full object-cover" alt="">
+          <div class="absolute left-0 top-1/4 -translate-x-3/4 p-2 md:p-5 bg-white rounded-xl shadow-sm">
+            <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
+            <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg my-1 skeleton"></div>
+            <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg bg-gray-100"></div>
+          </div>
+          <div class="absolute left-0 top-1/2 -translate-x-1/2 p-2 md:p-5 bg-white rounded-xl shadow-sm">
+            <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
+            <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-1"></div>
+          </div>
+          <div class="absolute left-0 -bottom-2 -translate-x-1/4 p-2 md:p-5 bg-white rounded-xl text-center shadow-sm">
+            <h1 class="text-[10px] md:text-xs text-start font-semibold text-gray-600">Dukung UMKM Indonesia</h1>
+            <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
+            <div class="w-24 md:w-52 h-1 md:h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-2"></div>
+            <div class="w-24 md:w-52 h-1 md:h-2 rounded-lg bg-gray-100"></div>
+            <button class="px-2 md:px-4 skeleton [animation-duration:1.5s] [--tw-skeleton-opacity:0.2] py-1 md:py-2.5 font-medium rounded-full bg-blue-400 text-[8px] md:text-xs text-white mt-3">Dukung sekarang</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="w-full md:w-1/2 order-1 md:order-2">
-      <div class="ml-auto w-3/4 md:w-[60%] aspect-3/4 relative">
-        <img src="img/foto-umkm.jpg" class="w-full h-full object-cover" alt="">
-        <div class="absolute left-0 top-1/4 -translate-x-3/4 p-2 md:p-5 bg-white rounded-xl shadow-sm">
-          <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
-          <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg my-1 skeleton"></div>
-          <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg bg-gray-100"></div>
-        </div>
-        <div class="absolute left-0 top-1/2 -translate-x-1/2 p-2 md:p-5 bg-white rounded-xl shadow-sm">
-          <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
-          <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-1"></div>
-        </div>
-        <div class="absolute left-0 -bottom-2 -translate-x-1/4 p-2 md:p-5 bg-white rounded-xl text-center shadow-sm">
-          <h1 class="text-[10px] md:text-xs text-start font-semibold text-gray-600">Dukung UMKM Indonesia</h1>
-          <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
-          <div class="w-24 md:w-52 h-1 md:h-2 rounded-lg bg-linear-to-r from-gray-200 to-gray-100 my-2"></div>
-          <div class="w-24 md:w-52 h-1 md:h-2 rounded-lg bg-gray-100"></div>
-          <button class="px-2 md:px-4 skeleton [animation-duration:1.5s] [--tw-skeleton-opacity:0.2] py-1 md:py-2.5 font-medium rounded-full bg-blue-400 text-[8px] md:text-xs text-white mt-3">Dukung sekarang</button>
-        </div>
+
+    <!-- 2 -->
+    <div class="flex gap-3 mt-5">
+       <div class="w-full md:w-1/2 flex flex-col px-1 order-2 md:order-1">
+          <h3 class="text-lg text-blue-400 leading-4">Langkah awal Grow </h3>
+          <h1 class="info-grafis-about font-semibold text-4xl mb-3">Menyemai Harapan UMKM Indonesia</h1>
+          <p class="text-[13px] mt-1"> &nbsp; Berdiri pada Oktober 2005, Grow lahir dari mimpi sederhana sekelompok anak muda di Surabaya yang ingin melihat UMKM Indonesia tumbuh lebih besar di era digital.</p>
+          <p class="text-[13px] mt-1"> &nbsp; Didirikan oleh Komunitas Inovator Muda Nusantara, Grow menjadi jembatan antara pelaku usaha kecil dan masyarakat luas melalui teknologi yang mudah digunakan, transparan, dan memberdayakan.</p>
+          <p class="text-[13px] mt-1"> &nbsp; Selama hampir dua dekade, kami berkomitmen membantu ribuan UMKM di seluruh Indonesia untuk naik kelas, menjangkau pasar lebih luas, dan menjadi pilar ekonomi bangsa yang tangguh.</p>
+      </div>
+      <div class="w-full md:w-1/2 order-1 md:order-2 flex flex-col gap-2 items-end">
+          <img src="img/foto-perusahaan.jpg" class="w-[60%] rounded-md shadow-md opacity-50" id="perusahaan" alt="">
+          <img src="img/foto-anggota.jpg" class="w-[60%] rounded-md -translate-x-1/2 shadow-md opacity-50" id="anggota" alt="">
       </div>
     </div>
+    
+  </div>
+</div>
+<section id="trigger" class="h-[250vh] mx-auto w-[99%]">
+  <div class="wrapper sticky top-0 h-screen flex items-center justify-center overflow-hidden relative" id="containerImgMemory">
+    <div class="flex-none flex  flex-wrap gap-5 w-1/3 h-screen absolute left-0 top-0">
+     <img src="img/Coklat Modern Kenangan Sekolah Instagram Post.png" class="opacity-0 memory" alt="">
+    </div>
+    <div class="flex-none w-[27%] h-screen absolute left-1/2 -translate-x-1/2 -translate-y-[6%] top-0">
+      <img src="img/Pink Minimalist Foto Kenangan Manis Instagram Post.png" class="opacity-0 memory" alt="">
+    </div>
+    <div class="flex-none w-[22%] absolute left-1/2 -translate-x-1/2 bottom-0">
+      <img src="img/Cokelat Krem Kreatif Kenangan Masa Sekolah Dasar Foto Kolase.png"  class="opacity-0 memory" alt="">
+    </div>
+    <div class="flex-none w-1/3 h-screen absolute right-0 top-0">
+      <img src="img/Biru tua Modern Kenangan Sekolah Instagram Story.png" class="opacity-0 memory" alt="">
+    </div>
+    <div id="mid" class="flex-none w-full h-1/2 flex flex-col text-center items-center justify-center">
+      <h1 class="text-5xl font-bold">Langkah Kecil <span class="text-blue-400">Dampak Besar </span> </h1>
+        <p class="text-sm mt-3 font-normal">Setiap foto punya cerita,
+      <p class="text-sm font-normal">Tentang semangat, kerja keras, dan harapan UMKM Indonesia yang terus tumbuh bersama Grow.</p>
+      <img class="w-1/8 opacity-0 logo-hand" src="img/Logo Platform Tukang Kebersihan Panggilan Monoline Sederhana Abu-abu Tua dan Oranye.png" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- mitra -->
+<h1 class="text-sm text-center mt-15">Didukung oleh mitra terbaik kami</h1>
+<div class="mx-auto w-11/12 flex justify-evenly mt-4 mb-15">
+  <div class="tooltip grayscale hover:grayscale-0" data-tip="Badan usaha Milik Negara">
+    <button class="w-24 px-1 aspect-1/1">
+      <img src="img/bumn.png" class="w-ful" alt="">
+    </button>
+  </div>
+  <div class="tooltip grayscale hover:grayscale-0" data-tip="Bank Rakyat Indonesia">
+    <button class="w-24 px-1 aspect-1/1">
+      <img src="img/bri.svg" alt="">
+    </button>
+  </div>
+  <div class="tooltip grayscale hover:grayscale-0" data-tip="Komunitas Pemberdayaan UMKM">
+    <button class="w-24 px-1 aspect-1/1">
+      <img src="img/pem-umkm.jpg" alt="">
+    </button>
+  </div>
+  <div class="tooltip grayscale hover:grayscale-0" data-tip="Universitas Maarif Hasyim Latif">
+    <button class="w-22 px-1 aspect-1/1">
+      <img src="img/umaha.jpg" alt="">
+    </button>
+  </div>
+  <div class="tooltip grayscale hover:grayscale-0" data-tip="Kementrian UMKM">
+    <button class="w-22 px-1 aspect-1/1">
+      <img src="img/p-umkm.png" alt="">
+    </button>
   </div>
 </div>
 
@@ -735,33 +814,33 @@
           <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
             <div class="card-body text-start">
               <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana1</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+              <p>Aku baru tahu banyak produk lokal sebagus ini! Lewat Grow, aku bisa nemu UMKM di sekitar kampus dengan harga terjangkau.</p>
+              <h3 class="leading-3 font-medium mt-2">Sinta</h3>
+              <p class="text-xs leading-1 text-gray-400">Selasa, 12-01-2019</p>
             </div>
           </div>
           <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
             <div class="card-body text-start">
               <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana2</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+              <p>Website-nya ringan dan gampang banget dipakai. Tinggal pilih kategori, langsung muncul UMKM terdekat. Suka banget konsepnya!</p>
+              <h3 class="leading-3 font-medium mt-2">Damar</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 20-08-2023</p>
             </div>
           </div>
           <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
             <div class="card-body text-start">
               <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana3</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+              <p>Sekarang aku lebih sering beli produk rumah tangga dari UMKM sekitar. Lebih hemat dan rasanya puas bisa bantu usaha kecil juga.</p>
+              <h3 class="leading-3 font-medium mt-2">Rara</h3>
+              <p class="text-xs leading-1 text-gray-400">Rabu, 11-04-2025</p>
             </div>
           </div>
           <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
             <div class="card-body text-start">
               <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana4</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+              <p>Grow bantu banget waktu aku nyari oleh-oleh khas daerah. Semua UMKM udah terdaftar rapi dan bisa lihat lokasi mereka juga.</p>
+              <h3 class="leading-3 font-medium mt-2">Maulana</h3>
+              <p class="text-xs leading-1 text-gray-400">Jum'at, 04-08-2024</p>
             </div>
           </div>
         </div>
@@ -769,57 +848,101 @@
           <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
             <div class="card-body text-start">
               <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana1</h3>
+              <p>Desain websitenya menarik dan informatif. Aku suka bagian promo UMKM baru, sering banget dapat diskon dari sana 😍.</p>
+              <h3 class="leading-3 font-medium mt-2">Via</h3>
+              <p class="text-xs leading-1 text-gray-400">Minggu, 12-12-2022</p>
+            </div>
+          </div>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>Seru banget bisa nemuin produk unik dari UMKM lokal. Aku bahkan sempat review produknya di kontenku, dan banyak yang tertarik beli!</p>
+              <h3 class="leading-3 font-medium mt-2">Rio</h3>
+              <p class="text-xs leading-1 text-gray-400">Sabtu, 29-09-2025</p>
+            </div>
+          </div>
+          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
+            <div class="card-body text-start">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
+              <p>Grow itu keren sih, bikin aku sadar ternyata produk lokal gak kalah sama brand besar. Fiturnya lengkap, dari lokasi sampai kupon diskon.</p>
+              <h3 class="leading-3 font-medium mt-2">Tania</h3>
               <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
             </div>
           </div>
           <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
             <div class="card-body text-start">
               <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana2</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
-            </div>
-          </div>
-          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
-            <div class="card-body text-start">
-              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana3</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
-            </div>
-          </div>
-          <div class="card-reviews hover:bg-blue-100 transition duration-200 ease-in-out flex-none py-2 px-1 md:py-3 md:px-5 card w-3/4 md:w-[calc(50%-8px)] bg-base-100 card-md shadow-sm shadow-blue-200 border-1 border-blue-200">
-            <div class="card-body text-start">
-              <img src="img/Screenshot 2025-10-30 162101.png" class="card-title rounded-full w-6" alt="">
-              <p>A card component has a figure, a bo  dy part, and inside body there are title and actions parts</p>
-              <h3 class="leading-3 font-medium mt-2">Maulana4</h3>
-              <p class="text-xs leading-1 text-gray-400">Senin, 12-08-2025</p>
+              <p>Suka banget konsepnya! Ngebantu banget buat tahu UMKM sekitar yang belum terkenal tapi kualitasnya mantap.</p>
+              <h3 class="leading-3 font-medium mt-2">Faiq</h3>
+              <p class="text-xs leading-1 text-gray-400">Senin, 10-02-2023</p>
             </div>
           </div>
         </div>
         <h1 class="text-4xl font-bold mx-auto">Cerita Inspiratif <span class="text-blue-400">UMKM</span></h1>
         <div class="flex flex-wrap gap-3">
-          <div class="w-[calc(50%-8px)] bg-red-200 h-30"></div>
-          <div class="w-[calc(50%-8px)] bg-red-200 h-30"></div>
-          <div class="w-[calc(50%-8px)] bg-red-200 h-30"></div>
+          <div class="w-[calc(50%-8px)] shadow-sm">
+            <div class="w-full h-44 relative rounded-t-xl">
+              <div class="w-full h-full absolute z-10 top-0 left-0 flex">
+                <div class="w-1/2 text-start self-end p-2">
+                  <h1 class="text-white text-2xl font-bold">Suki Mentai</h1>
+                </div>
+              </div>
+              <img class="w-full h-full object-cover rounded-t-xl" src="img/umkm/mentai.jpeg" alt="">
+            </div>
+            <div class="text-start text-sm p-2 bg-blue-50 rounded-b-xl">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="rounded-full w-6" alt="">
+              <p class="text-gray-600">
+                Berawal dari dapur rumah sederhana, Suki Mentai lahir dari hobi seorang ibu muda yang gemar bereksperimen dengan saus mentai. Berkat kegigihan dan promosi melalui Grow, 
+                kini usahanya berkembang pesat dan dikenal banyak orang sebagai sajian rumahan yang lezat, modern, dan terjangkau.
+              </p>
+              <div class=" w-full flex justify-between mt-1">
+                <div class="">
+                  <h1 class="mt-1 font-semibold text-gray-500">Octavia</h1>
+                  <h3 class="text-xs text-gray-400">20-09-2025</h3>
+                </div>  
+                <img class="rounded-full object-cover w-12 h-12" src="img/umkm/owner.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="w-[calc(50%-8px)] shadow-sm">
+            <div class="w-full h-44 relative rounded-t-xl">
+              <div class="w-full h-full absolute z-10 top-0 left-0 flex">
+                <div class="w-1/2 text-start self-end p-2">
+                  <h1 class="text-white text-2xl font-bold">Mie Ayam Syahdu</h1>
+                </div>
+              </div>
+              <img class="w-full h-full object-cover rounded-t-xl" src="img/umkm/mie ayam.jpeg" alt="">
+            </div>
+            <div class="text-start text-sm p-2 bg-blue-50 rounded-b-xl">
+              <img src="img/Screenshot 2025-10-30 162101.png" class="rounded-full w-6" alt="">
+              <p class="text-gray-600">
+                Dari gerobak kecil di sudut jalan, Mie Ayam Syahdu terus tumbuh dengan cita rasa autentik dan sambal khas buatan sendiri. 
+                Melalui dukungan digital Grow, kini mereka menjangkau pelanggan lebih luas tanpa kehilangan kehangatan dan rasa kebersamaan yang menjadi ciri khasnya.
+              </p>
+              <div class=" w-full flex justify-between mt-1">
+                <div class="">
+                  <h1 class="mt-1 font-semibold text-gray-500">Maulana</h1>
+                  <h3 class="text-xs text-gray-400">26-12-2024</h3>
+                </div>  
+                <img class="rounded-full object-cover object-left w-12 h-12" src="img/umkm/owner-mieAyam.jpg" alt="">
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
+      </div>  
     </div>
 
-    <div class="hero-content flex flex-col w-full">
+    <div class="hero-content flex flex-col w-full p-0">
       <button class="bg-blue-200 text-blue-500 px-2.5 py-1.5 rounded-2xl font-semiboldS text-xs">Hubungi Kami</button>
-      <h1 class="text-4xl font-bold">Ada pertanyaan? Yuk ngobrol!</h1>
+      <h1 class="text-4xl font-bold text-center">Ada pertanyaan? Yuk ngobrol!</h1>
       <p class="text-xs leading-3.5 text-center">Tim kami siap membantu anda. Kirimkan pesan atau hubungi langsung melalui kontak <br> dibawah ini.</p>
-      <div class="w-11/12 bg-blue-400 py-5 text-center rounded-lg">
+      <div class="w-full md:w-11/12 bg-blue-400 py-7 px-3 text-center rounded-lg">
         <h1 class="text-white text-2xl font-bold text-center">Terhubung dengan Kami</h1>
         <p class="text-white text-xs mt-2">
           Ikuti media sosial kami untuk update UMKM terbaru dan promo menarik !
         </p>
-        <div class="flex gap-5 my-6 justify-center">
-          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+        <div class="flex flex-wrap gap-2 md:gap-5 my-6 justify-center">
+          <button class="w-[calc(50%-8px)] md:w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
             <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto  lucide lucide-instagram-icon lucide-instagram inline-block"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </div>
@@ -830,7 +953,7 @@
               <p class="text-[10px]">@GrowUMKM_id</p>
             </div>
           </button>
-          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+          <button class="w-[calc(50%-8px)] md:w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
             <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </div>
@@ -841,7 +964,7 @@
               <p class="text-[10px]">@GrowUMKM_id</p>
             </div>
           </button>
-          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+          <button class="w-[calc(50%-8px)] md:w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
             <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-twitter-icon lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
             </div>
@@ -852,7 +975,7 @@
               <p class="text-[10px]">@GrowUMKM_id</p>
             </div>
           </button>
-          <button class="w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
+          <button class="w-[calc(50%-8px)] md:w-1/6 p-2 rounded-xl text-white flex gap-2 cursor-pointer glassmorphism-btn">
             <div class="w-10 aspect-1/1 flex items-center rounded-lg glassmorphism-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>  
             </div>
@@ -869,16 +992,9 @@
   </div>
 </div>
 
-<dialog id="my_modal_3" class="modal">
-  <div class="modal-box flex flex-col items-center">
-    <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-    </form>
-    <h3 class="text-3xl font-bold">Ambil kuponmu</h3>
-    <img src="img/kupon.jpg" alt="">
-    <button class="btn bg-blue-400 rounded-full  text-white">Download kupon</button>
-  </div>
+<dialog id="my_modal_3" class="modal !-w-full">  
 </dialog>
+
 
 <footer class="footer sm:footer-horizontal bg-blue-900 text-neutral-content p-10">
   <nav>
