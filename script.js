@@ -162,10 +162,10 @@ function showLess(button){
 
 // marquee reviews
 function marquee(){
-  marqueeLeft();
-  marqueeRight();
+  marquee1();
+  marquee2();
 }
-function marqueeLeft(){
+function marquee1(){
   const parent = document.querySelectorAll('.container-card-reviews')[0];
   const children = parent.children;
   const clone = parent.innerHTML;
@@ -189,7 +189,7 @@ function marqueeLeft(){
     el.addEventListener('mouseout', () => scroll());
   })
 }
-function marqueeRight(){
+function marquee2(){
   const parent = document.querySelectorAll('.container-card-reviews')[1];
   const children = parent.children;
   const clone = parent.innerHTML;
@@ -200,17 +200,15 @@ function marqueeRight(){
 
 
   function scroll(){
-    
-    if (parent.scrollLeft <= 1) {
-      parent.scrollLeft = totalWidth;
-    } else {
-      parent.scrollLeft -= 6;
+    parent.scrollLeft += 0.6;
+    if(parent.scrollLeft >= totalWidth){
+      parent.scrollLeft = 0
     }
-    temp = requestAnimationFrame(scroll);
+    temp = requestAnimationFrame(scroll)
   }
   setTimeout(() => {
     scroll();
-  },500)
+  },5000)
 
   Array.from(children).forEach(el => {
     el.addEventListener('mouseover', () => cancelAnimationFrame(temp));
@@ -218,7 +216,7 @@ function marqueeRight(){
   })
   
 }
-// window.addEventListener('load', marquee());
+window.addEventListener('load', marquee());
 
 // location -> leaflet.js
 function map(){
@@ -646,3 +644,7 @@ gsap.to("#anggota", {
     pinSpacing : true
   }
 });
+
+
+// modal detail
+//menambahkan kontak, dekripsi tentang singkat dan pendiri
