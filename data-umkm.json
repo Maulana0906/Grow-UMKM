@@ -1,0 +1,219 @@
+[
+    {
+        "id" : 1,
+        "judul" : "Mie Ayam Syahdu",
+        "path" : "img/umkm/mie ayam.jpeg",
+        "kategori" : "makanan",
+        "alamat" : "Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)",
+        "jam_operasi" : "Setiap hari, 08.00 - 20.00",
+        "menu" : [
+            {
+                "nama" : "Mie Ayam biasa",
+                "harga" : "Rp 10.000",
+                "path" : "img/umkm/mie ayam/mie-biasa.jpg"
+            },
+            {
+                "nama" : "Mie Ayam Bakso",
+                "harga" : "Rp 13.000",
+                "path" : "img/umkm/mie ayam/mie-bakso.jpg"
+            },
+            {
+                "nama" : "Mie Ayam Ceker",
+                "harga" : "Rp 13.000",
+                "path" : "img/umkm/mie ayam/mie-ceker.jpg"
+            },
+            {
+                "nama" : "Mie Ayam Extra",
+                "harga" : "Rp 15.000",
+                "path" : "img/umkm/mie ayam/mie-extra.jpg"
+            },
+            {
+                "nama" : "Es Jeruk",
+                "harga" : "Rp 5.000",
+                "path" : "img/umkm/mie ayam/es-jeruk.jpg"
+            },
+            {
+                "nama" : "Es Teh",
+                "harga" : "Rp 4.000",
+                "path" : "img/umkm/mie ayam/es-teh.png"
+            },
+            {
+                "nama" : "Es Kuwut",
+                "harga" : "Rp 7.000",
+                "path" : "img/umkm/mie ayam/es-kuwut.webp"
+            }
+        ],
+        "terlaris" : [
+            {
+                "nama" : "Mie Ayam Extra",
+                "harga" : "Rp 15.000",
+                "path" : "img/umkm/mie ayam/mie-extra.jpg"
+            },
+            {
+                "nama" : "Es Kuwut",
+                "harga" : "Rp 7.000",
+                "path" : "img/umkm/mie ayam/es-kuwut.webp"
+            }
+        ]
+    },
+    {
+        "id" : 2,
+        "judul" : "Toko Ahabba",
+        "path" : "img/umkm/atk.jpg",
+        "kategori" : "Peralatan sekolah",
+        "alamat" : "Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)",
+        "jam_operasi" : "Setiap hari, 07.00 - 22.00",
+        "menu" : [
+            {
+                "nama" : "Alat Tulis",
+                "harga" : "Rp 2.000 - 15.000",
+                "path" : "img/umkm/atk/alat-tulis.png"
+            },
+            {
+                "nama" : "Kertas & Buku",
+                "harga" : "Rp 1.000 - 40.000",
+                "path" : "img/umkm/atk/buku.jpg"
+            },
+            {
+                "nama" : "Peralatan Kantor",
+                "harga" : "Rp 10.000 - 80.000",
+                "path" : "img/umkm/atk/kantor.jpeg"
+            },
+            {
+                "nama" : "Krayon & pewarna",
+                "harga" : "Rp 12.000 - 40.000",
+                "path" : "img/umkm/atk/krayonn.jpg"
+            },
+            {
+                "nama" : "Penggaris & Alay ukur",
+                "harga" : "Rp 2.000 - 40.000",
+                "path" : "img/umkm/atk/penggaris.jpg"
+            }
+        ],
+        "terlaris" : [
+            {
+                "nama" : "Alat Tulis",
+                "harga" : "Rp 2.000 - 15.000",
+                "path" : "img/umkm/atk/alat-tulis.png"
+            },
+            {
+                "nama" : "Kertas & Buku",
+                "harga" : "Rp 1.000 - 40.000",
+                "path" : "img/umkm/atk/buku.jpg"
+            }
+        ]
+       
+    },
+    {
+        "id" : 3,
+        "judul" : "Super Bakso",
+        "path" : "img/umkm/bakso.jpg",
+        "kategori" : "Makanan",
+        "alamat" : " Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)",
+        "jam_operasi" : "Setiap hari, 10.00 - 19.00",
+        "menu" : [
+            {
+                "nama" : "Bakso Biasa",
+                "harga" : "Rp 7.000",
+                "path" : "img/umkm/bakso/bakso-biasa.jpeg"
+            },
+            {
+                "nama" : "Bakso Jumbo",
+                "harga" : "Rp 10.000",
+                "path" : "img/umkm/bakso/bakso-jumbo.webp"
+            },
+            {
+                "nama" : "Bakso Kuah Pedas",
+                "harga" : "Rp 15.000",
+                "path" : "img/umkm/bakso/bakso-kuah-pedas.jpg"
+            },
+            {
+                "nama" : "Bakso Beranak",
+                "harga" : "Rp 12.000",
+                "path" : "img/umkm/bakso/bakso-beranak.webp"
+            },
+            {
+                "nama" : "Bakso Urat",
+                "harga" : "Rp 11.000",
+                "path" : "img/umkm/bakso/bakso-urat.jpg"
+            },
+            {
+                "nama" : "Bakso Sayur",
+                "harga" : "Rp 8.000",
+                "path" : "img/umkm/bakso/bakso-sayur.jpg"
+            },
+            {
+                "nama" : "Es Jeruk",
+                "harga" : "Rp 5.000",
+                "path" : "img/umkm/mie ayam/es-jeruk.jpg"
+            },
+            {
+                "nama" : "Es Teh",
+                "harga" : "Rp 4.000",
+                "path" : "img/umkm/mie ayam/es-teh.png"
+            }
+            
+        ],
+        "terlaris" : [
+            {
+                "nama" : "Bakso Jumbo",
+                "harga" : "Rp 10.000",
+                "path" : "img/umkm/bakso/bakso-jumbo.webp"
+            },
+            {
+                "nama" : "Es Teh",
+                "harga" : "Rp 4.000",
+                "path" : "img/umkm/mie ayam/es-teh.png"
+            }
+        ]
+       
+    },
+    {
+        "id" : 4,
+        "judul" : "Toko Bahan Kue Pelangi",
+        "path" : "img/umkm/toko kue.jpg",
+        "kategori" : "Makanan",
+        "alamat" : "Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)",
+        "jam_operasi" : "Setiap hari, 08.00 - 20.00",
+        "menu" : [
+            {
+                "nama" : "Bahan Dasar",
+                "harga" : "Rp 2.000 - 20.000",
+                "path" : "img/umkm/pelangi kue/bahan-dasar.jpg"
+            },
+            {
+                "nama" : "Dekorasi & Kemasan",
+                "harga" : "Rp 5.000 - 10.000",
+                "path" : "img/umkm/pelangi kue/kemasan.avif"
+            },
+            {
+                "nama" : "Peralatan & Alat",
+                "harga" : "Rp 5.000 - 500.000",
+                "path" : "img/umkm/pelangi kue/alat.jpg"
+            },
+            {
+                "nama" : "Pewarna Buatan",
+                "harga" : "Rp 2.000 - 20.000",
+                "path" : "img/umkm/pelangi kue/pewarna.jpeg"
+            },
+            {
+                "nama" : "Toping Kue",
+                "harga" : "Rp 2.000 - 40.000",
+                "path" : "img/umkm/pelangi kue/toping.webp"
+            }
+        ],
+        "terlaris" : [
+            {
+                "nama" : "Bahan Dasar",
+                "harga" : "Rp 2.000 - 20.000",
+                "path" : "img/umkm/pelangi kue/bahan-dasar.jpg"
+            },
+            {
+                "nama" : "Toping Kue",
+                "harga" : "Rp 2.000 - 40.000",
+                "path" : "img/umkm/pelangi kue/toping.webp"
+            }
+        ]
+       
+    }
+]

@@ -43,26 +43,26 @@ function showMore(button){
   const parent = button.parentElement.previousElementSibling;
     const ui = `<div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/mentai.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
             ${selection}
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
           <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-[7px] md:text-xs font-bold info-grafis-utama">Makanan</button>
-          <h1 class="text-sm md:text-md font-semibold">Suki mentai</h1>
+          <h1 class="text-sm md:text-md font-semibold">Super Bakso</h1>
           <p class="text-[9px] md:text-xs inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
             Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
           </p>
           <ul class="text-[9px] md:text-xs list-disc ml-3.5">
-            <li >Gyoza</li>
-            <li>Dimsum Mentai</li>
+            <li>Bakso Biasa</li>
+            <li>Bakso Beranak</li>
             <li class="list-none leading-2 tracking-wider">.....</li>
           </ul>
           <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
             <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
-              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>20.000 - 40.000</h3>
-            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+              <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>4.000 - 15.000</h3>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer" data-name="get-detail" data-id="3" onclick="openModal(this)">Detail</button>
           </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ function showMore(button){
           <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
             <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
               <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>5.000 - 76.000</h3>
-            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer" data-name="get-detail" data-id="2" onclick="openModal(this)">Detail</button>
           </div>
         </div>
         </div>
@@ -112,7 +112,7 @@ function showMore(button){
           <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
             <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
               <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>2.000 - 100.000</h3>
-            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer" data-name="get-detail" data-id="4" onclick="openModal(this)">Detail</button>
           </div>
         </div>
         </div>
@@ -137,7 +137,7 @@ function showMore(button){
           <div class="flex flex-col md:flex-row justify-between mt-2 px-1">
             <h3 class="text-lg md:text-2xl text-gray-700 font-bold">
               <span class="text-xs md:text-sm font-semibold block md:inline-block">Rp</span>10.000 - 25.000</h3>
-            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer">Detail</button>
+            <button class="text-[9px] md:text-xs font-medium text-white tracking-wide px-3.5 h-5 md:h-7 rounded-full bg-blue-400 cursor-pointer" data-name="get-detail" data-id="1" onclick="openModal(this)">Detail</button>
           </div>
         </div>
         </div>`;
@@ -159,6 +159,8 @@ function showLess(button){
     button.innerHTML += '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>';
 
 }
+
+// marquee reviews
 function marquee(){
   marqueeLeft();
   marqueeRight();
@@ -168,21 +170,19 @@ function marqueeLeft(){
   const children = parent.children;
   const clone = parent.innerHTML;
   let temp;
-  let i =0;
 
   parent.insertAdjacentHTML('beforeend', clone);
   parent.insertAdjacentHTML('beforeend', clone);
   const totalWidth = parent.scrollWidth / 2;
 
   function scroll(){
-    i+= 0.6;
-    if(i >= totalWidth){
-      i =0
+    parent.scrollLeft += 0.6;
+    if(parent.scrollLeft >= totalWidth){
+      parent.scrollLeft = 0
     }
-    parent.scrollLeft = i;
     temp = requestAnimationFrame(scroll)
   }
-    scroll();
+  scroll();
 
   Array.from(children).forEach(el => {
     el.addEventListener('mouseover', () => cancelAnimationFrame(temp));
@@ -194,22 +194,23 @@ function marqueeRight(){
   const children = parent.children;
   const clone = parent.innerHTML;
   let temp;
-  let i =0;
-
-  parent.insertAdjacentHTML('beforeend', clone);
-  parent.insertAdjacentHTML('beforeend', clone);
   const totalWidth = parent.scrollWidth / 2;
+  parent.insertAdjacentHTML('beforeend', clone);
+  parent.insertAdjacentHTML('beforeend', clone);
+
 
   function scroll(){
-    i-= 0.6;
-    if(i <= 0){
-      i = totalWidth;
+    
+    if (parent.scrollLeft <= 1) {
+      parent.scrollLeft = totalWidth;
+    } else {
+      parent.scrollLeft -= 6;
     }
-    parent.scrollLeft = i;
     temp = requestAnimationFrame(scroll);
   }
-
-  scroll();
+  setTimeout(() => {
+    scroll();
+  },500)
 
   Array.from(children).forEach(el => {
     el.addEventListener('mouseover', () => cancelAnimationFrame(temp));
@@ -217,8 +218,7 @@ function marqueeRight(){
   })
   
 }
-window.addEventListener('load', marquee());
-
+// window.addEventListener('load', marquee());
 
 // location -> leaflet.js
 function map(){
@@ -279,17 +279,17 @@ function openModal(btn){
                     </form>
                     <span class="text-start text-lg font-semibold">Lokasi : </span>
                     <button id="alamat" class="flex-none text-sm text-center w-full bg-slate-100 shadow-md min-h-9 py-2 rounded-md">-</button>
-                    <div class="flex gap-4 p-5 items-center w-full">
+                    <div class="flex flex-col md:flex-row gap-4 p-5 items-center w-full">
                       <fieldset class="fieldset w-full md:w-[45%] aspect-1/1">
                         <legend class="fieldset-legend text-sm">Lokasi baru :</legend>
                         <textarea class="textarea w-full aspect-4/3" placeholder="Masukan lokasimu secara lengkap" id="inputTextLocation"></textarea>
                         <button class="py-1 w-20 text-white font-semibold cursor-pointer justify-self-end rounded-full bg-blue-400" id="btnTextLocation"> Cek </button>
                         <div class="label">*NB : Lokasi bisa isi manual atau pilih di peta</div>
                       </fieldset>
-                    <div class="w-full md:w-[45%] aspect-1/1" id="map"></div>
-                    </div>
-                    <button class="py-1 w-32 -mt-1 text-blue-400 font-semibold cursor-pointer justify-self-end rounded-full border border-blue-400 transition duration-150 ease-in-out hover:bg-blue-400 hover:text-white" id="saveOnModal"> Simpan </button>
-                  </div>`;
+                      <div class="w-full md:w-[45%] aspect-1/1" id="map"></div>
+                      </div>
+                      <button class="py-1 w-32 -mt-1 text-blue-400 font-semibold cursor-pointer justify-self-end rounded-full border border-blue-400 transition duration-150 ease-in-out hover:bg-blue-400 hover:text-white" id="saveOnModal"> Simpan </button>
+                    </div>`;
       document.getElementById('my_modal_3').innerHTML += uiLocation; 
       setTimeout(()=> {
         map();     
@@ -303,121 +303,15 @@ function openModal(btn){
                   </form>
                   <h3 class="text-3xl font-bold">Ambil kuponmu</h3>
                   <img src="img/kupon.jpg" alt="">
-                  <button class="btn bg-blue-400 rounded-full  text-white">Download kupon</button>
+                  <a href="img/kupon.jpg" download>
+                    <button class="btn bg-blue-400 rounded-full  text-white">Download kupon</button>
+                  </a>
                 </div>`;
       document.getElementById('my_modal_3').innerHTML += uiDiscount;
       my_modal_3.showModal();
       break;
     case 'get-detail':
-      const uiDetail = `<div class="modal-box flex flex-col items-center !max-w-3/4 px-5 pt-10 pb-3">
-                  <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="deleteModal()">✕</button>
-                  </form>
-                  <div class="w-full h-full">
-                    <div class="h-72 w-full relative">
-                      <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover object-center rounded-md "> 
-                    </div>
-                    <div class="mt-3 w-full">
-                      <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-sm font-bold info-grafis-utama">Makanan</button>
-                      <h1 class="text-2xl font-semibold">Mie Ayama Syahdu</h1>
-                      <p class="text-sm inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                        Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)
-                      </p>
-                      <h2 class="text-sm font-semibold"> Jam operasional : </h2>
-                      <p class="text-sm"> Setiap hari, 08.00 - 20.00</p>
-                      <h2 class="text-md font-semibold mt-3"> Menu : </h2>
-                      <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/mie-biasa.jpg" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Mie Ayam biasa </p>
-                            <p class="leading-3.5">Rp 10.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/mie-bakso.jpg" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Mie Ayam Bakso </p>
-                            <p class="leading-3.5">Rp 13.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/mie-ceker.jpg" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Mie Ayam Ceker </p>
-                            <p class="leading-3.5">Rp 13.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/mie-extra.jpg" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Mie Ayam Extra </p>
-                            <p class="leading-3.5">Rp 15.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/es-jeruk.jpg" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Es Jeruk </p>
-                            <p class="leading-3.5">Rp 5.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/es-teh.png" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Es Teh </p>
-                            <p class="leading-3.5">Rp 4.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/es-kuwut.webp" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Es Kuwut </p>
-                            <p class="leading-3.5">Rp 7.000 </p>
-                          </div>
-                        </li>
-                      </ul>
-                      <h2 class="text-md font-semibold mt-3"> Terfavorit : </h2>
-                      <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/mie-extra.jpg" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Mie Ayam Extra </p>
-                            <p class="leading-3.5">Rp 15.000 </p>
-                          </div>
-                        </li>
-                        <li class="flex gap-1">
-                          <div class="w-12 h-12">
-                            <img src="img/umkm/es-kuwut.webp" class="w-full h-full object-cover object-center rounded-full">
-                          </div>
-                          <div class="flex flex-col">
-                            <p class="leading-3.5 ">Es Kuwut </p>
-                            <p class="leading-3.5">Rp 7.000 </p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>  `;
-      document.getElementById('my_modal_3').innerHTML += uiDetail;
-      my_modal_3.showModal();
+      getdataUMKM(btn.dataset.id);
       break;
     case 'login':
       const uiLogin = `<div class="modal-box flex flex-col items-center">
@@ -474,6 +368,67 @@ function deleteModal(){
     document.getElementById('my_modal_3').innerHTML =''; 
   }, 300)
 }
+async function getdataUMKM(id){
+  const res = await fetch('./data-umkm.json');
+  const values = await res.json();
+  const data = values.find(e => e.id == id);
+  const uiMenu = data.menu.map(e => {
+    return `<li class="flex gap-1">
+                          <div class="w-12 h-12">
+                            <img src="${e.path}" class="w-full h-full object-cover object-center rounded-full">
+                          </div>
+                          <div class="flex flex-col">
+                            <p class="leading-3.5 ">${e.nama} </p>
+                            <p class="leading-3.5">${e.harga} </p>
+                          </div>
+                        </li>`
+  }).join('');
+  const uiTerlaris = data.terlaris.map(e => {
+    return `<li class="flex gap-1">
+                          <div class="w-12 h-12">
+                            <img src="${e.path}" class="w-full h-full object-cover object-center rounded-full">
+                          </div>
+                          <div class="flex flex-col">
+                            <p class="leading-3.5 ">${e.nama} </p>
+                            <p class="leading-3.5">${e.harga} </p>
+                          </div>
+                        </li>`
+  }).join('');
+
+  const uiDetail = `<div class="modal-box flex flex-col items-center !max-w-3/4 px-5 pt-10 pb-3">
+                  <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="deleteModal()">✕</button>
+                  </form>
+                  <div class="w-full h-full">
+                    <div class="h-72 w-full relative">
+                      <img src="${data.path}" class="w-full h-full object-cover object-center rounded-md "> 
+                    </div>
+                    <div class="mt-3 w-full">
+                      <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-sm font-bold info-grafis-utama">${data.kategori}</button>
+                      <h1 class="text-2xl font-semibold">${data.judul}</h1>
+                      <h2 class="text-sm font-semibold mt-2"> Lokasi : </h2>
+                      <p class="text-sm inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                        ${data.alamat}
+                      </p>
+                      <h2 class="text-sm font-semibold"> Jam operasional : </h2>
+                      <p class="text-sm"> ${data.jam_operasi}</p>
+                      <h2 class="text-md font-semibold mt-3"> Menu : </h2>
+                      <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
+                       ${uiMenu}
+                      </ul>
+                      <h2 class="text-md font-semibold mt-3"> Terlaris : </h2>
+                      <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
+                        ${uiTerlaris}
+                      </ul>
+                    </div>
+                  </div>
+                </div>  `;
+
+  document.getElementById('my_modal_3').innerHTML += uiDetail;
+  my_modal_3.showModal();
+}
+// login
 document.addEventListener('click', (el) => {
   if(el.target.classList.contains('swapContentLogin')){
     swapContentLogin(el.target);
@@ -522,7 +477,6 @@ function swapContentLogin(btn){
    swapToDaftar();
   }
 }
-
 function loadDaftar(btn){
   const numberStep = Number(btn.dataset.step) + 1;
   const container = document.getElementById('contentModalLogin');
@@ -610,18 +564,41 @@ function loadDaftar(btn){
   }
 }
 
+// gsap
 gsap.registerPlugin(ScrollTrigger);
-gsap.to("#mid", {
-  width : "30%",
-  scale : 0.9,
-  scrollTrigger: {
-    trigger: "#trigger",
-    start: "top top",       
-    end: "center top",      
-    scrub: 1,                         
-    markers: false,          
-    pinSpacing : true
-  }
+ScrollTrigger.matchMedia({
+
+  // untuk layar di atas md 
+  "(min-width: 768px)": function() {
+    gsap.to("#mid", {
+      width: "30%",
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: "#trigger",
+        start: "top top",
+        end: "center top",
+        scrub: 1,
+        markers: false,
+        pinSpacing: true
+      }
+    });
+  },
+
+  // untuk layar di bawah md
+  "(max-width: 767px)": function() {
+    gsap.to("#mid", {
+      translateY : "-100px",
+      scrollTrigger: {
+        trigger: "#trigger",
+        start: "top top",
+        end: "center top",
+        scrub: 1,
+        markers: false
+      }
+    });
+  },
+
+
 });
 gsap.from("#mid .logo-hand", {
   opacity : "100%",
