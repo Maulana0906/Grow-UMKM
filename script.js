@@ -375,12 +375,13 @@ async function getdataUMKM(id){
                           <div class="w-12 h-12">
                             <img src="${e.path}" class="w-full h-full object-cover object-center rounded-full">
                           </div>
-                          <div class="flex flex-col">
+                          <div class="flex flex-col mt-1">
                             <p class="leading-3.5 ">${e.nama} </p>
                             <p class="leading-3.5">${e.harga} </p>
                           </div>
                         </li>`
   }).join('');
+
   const uiTerlaris = data.terlaris.map(e => {
     return `<li class="flex gap-1">
                           <div class="w-12 h-12">
@@ -392,8 +393,25 @@ async function getdataUMKM(id){
                           </div>
                         </li>`
   }).join('');
-
-  const uiDetail = `<div class="modal-box flex flex-col items-center !max-w-3/4 px-5 pt-10 pb-3">
+  
+  const uiKontak = data.kontak.map(e => {
+    const [key, value] = Object.entries(e)[0];
+    return `<li> ${key=="WhatsApp"?'<img class="w-5 inline-block" src="img/whatsapp-svg.svg">' : '<img class="w-5 inline-block" src="img/email-svg.svg">'} &nbsp; ${value} </li>`;
+  }).join('');
+  let badgeStatus = ``;
+  
+  switch(data.status){
+    case 'UMKM veteran':
+      badgeStatus = `bg-purple-200 text-purple-600 border-white`
+      break;
+    case 'Baru bergabung' :
+      badgeStatus = `text-green-600 bg-green-100 border-white`
+      break;
+    case 'Sedang berkembang' :
+      badgeStatus = `text-yellow-600 bg-yellow-100 border-white`
+      break;
+  }
+  const uiDetail = `<div class="modal-box flex flex-col items-center md:max-w-11/12 lg:max-w-3/4 px-5 pt-10 pb-3">
                   <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="deleteModal()">✕</button>
                   </form>
@@ -401,17 +419,37 @@ async function getdataUMKM(id){
                     <div class="h-72 w-full relative">
                       <img src="${data.path}" class="w-full h-full object-cover object-center rounded-md "> 
                     </div>
-                    <div class="mt-3 w-full">
-                      <button class="px-1 rounded-full text-blue-400 border-1 border-blue-300 text-sm font-bold info-grafis-utama">${data.kategori}</button>
-                      <h1 class="text-2xl font-semibold">${data.judul}</h1>
-                      <h2 class="text-sm font-semibold mt-2"> Lokasi : </h2>
-                      <p class="text-sm inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                        ${data.alamat}
-                      </p>
-                      <h2 class="text-sm font-semibold"> Jam operasional : </h2>
-                      <p class="text-sm"> ${data.jam_operasi}</p>
-                      <h2 class="text-md font-semibold mt-3"> Menu : </h2>
+                    <div class="mt-3 w-full text-gray-700">
+                    <div class="w-full flex gap-3 mt-1 mb-3 justify-between md:justify-start"> 
+                      <button class="px-1 rounded-full text-blue-500 bg-blue-100 text-sm font-bold info-grafis-utama">${data.kategori}</button>
+                      <button class="px-1 rounded-full ${badgeStatus} border-1 text-sm font-bold info-grafis-utama">${data.status}</button>
+                    </div>
+                    <h1 class="text-4xl font-bold">${data.judul}</h1>
+                    <h2 class="text-sm font-medium"> Pemilik : ${data.pemilik}</h2>
+                      <p class="text-sm text-justify">${data.deskripsi}</p>
+                      <h2 class="text-md font-semibold mt-2"> Jam operasional : </h2>
+                      <p class="text-sm mb-4"> ${data.jam_operasi}</p>
+                      <h2 class="text-md font-semibold mt-4"> Kontak : </h2>
+                      <ul class="text-sm mt-0.5 ml-3.5 w-full flex flex-col gap-1">
+                       ${uiKontak}
+                      </ul>
+                      <div class="w-full flex gap-3 my-4"> 
+                        <div class="w-1/2"> 
+                          <h2 class="text-md font-semibold"> Pemesanan : </h2>
+                          <ul class="text-sm mt-0.5 ml-3.5 w-full flex flex-col gap-0.5">
+                            ${data.transaksi.map(e => `<li> <img class="w-5.5 inline-block" src="img/${e}.svg"> &nbsp; ${e}</li>`).join('')}
+                          </ul>
+                          <p class="text-xs text-gray-400 mt-1">*Nb : Jika ingin memesan selain secara offline harap hubungi lewat kontak yang tersedia </p>
+                        </div>
+                        <div class="w-1/2"> 
+                          <h2 class="text-md font-semibold"> Lokasi : </h2>
+                          <p class="text-sm inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#51a2ff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white -mt-1 lucide lucide-map-pin-icon lucide-map-pin inline-block"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            ${data.alamat}
+                          </p>
+                        </div>
+                      </div>
+                      <h2 class="text-md font-semibold mt-4"> Menu : </h2>
                       <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
                        ${uiMenu}
                       </ul>

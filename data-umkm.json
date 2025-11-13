@@ -3,7 +3,15 @@
         "id" : 1,
         "judul" : "Mie Ayam Syahdu",
         "path" : "img/umkm/mie ayam.jpeg",
-        "kategori" : "makanan",
+        "pemilik" : "Bapak Dimas Prasetyo",
+        "status" : "Sedang berkembang",
+        "deskripsi" : "Super Bakso dikenal dengan kuah gurihnya yang khas dan bakso urat ukuran jumbo yang jadi favorit warga sekitar. Berdiri sejak 2017, usaha ini terus berkembang dari gerobak kecil menjadi kedai yang ramai dikunjungi berkat keuletan Pak Dimas dan dukungan promosi digital melalui Grow.",
+        "kontak" : [
+            {"WhatsApp" : "08122983092"},
+            {"Email" : "dimas_pras@gmail.com"}
+        ],
+        "transaksi" : ["Offline", "Dikirim"],
+        "kategori" : "Makanan",
         "alamat" : "Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)",
         "jam_operasi" : "Setiap hari, 08.00 - 20.00",
         "menu" : [
@@ -60,6 +68,13 @@
         "id" : 2,
         "judul" : "Toko Ahabba",
         "path" : "img/umkm/atk.jpg",
+        "pemilik" : "Bapak Ahmad Bahtiar",
+        "status" : "Baru bergabung",
+        "deskripsi" : "Toko Ahabba ATK menyediakan berbagai perlengkapan tulis, kantor, dan sekolah dengan harga terjangkau. Awalnya hanya melayani warga sekitar desa, kini toko ini menjangkau lebih banyak pelanggan melalui fitur pencarian dan lokasi di platform Grow.",
+        "kontak" : [
+            {"WhatsApp" : "081220983092"}
+        ],
+        "transaksi" : ["Offline", "Dikirim", "COD"],
         "kategori" : "Peralatan sekolah",
         "alamat" : "Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)",
         "jam_operasi" : "Setiap hari, 07.00 - 22.00",
@@ -108,6 +123,14 @@
         "id" : 3,
         "judul" : "Super Bakso",
         "path" : "img/umkm/bakso.jpg",
+        "pemilik" : "Bapak Maulana syarif",
+        "status" : "UMKM veteran",
+        "deskripsi" : "Mie Ayam Syahdu hadir dengan resep turun-temurun dan sambal pedas khas yang menggugah selera. Dikelola oleh Bapak Maulana bersama keluarga, UMKM ini dikenal karena pelayanan ramah dan cita rasa yang konsisten, menjadi pilihan favorit pelanggan sejak bergabung dengan Grow.",
+        "kontak" : [
+            {"WhatsApp" : "083292331621"},
+            {"Email" : "superBakso_maulana@gmail.com"}
+        ],
+        "transaksi" : ["Offline", "Dikirim"],
         "kategori" : "Makanan",
         "alamat" : " Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)",
         "jam_operasi" : "Setiap hari, 10.00 - 19.00",
@@ -171,6 +194,14 @@
     {
         "id" : 4,
         "judul" : "Toko Bahan Kue Pelangi",
+         "pemilik" : "Ibu Siti Rahmawati",
+        "status" : "UMKM veteran",
+        "deskripsi" : "Toko Bahan Kue Pelangi menjadi andalan para pembuat kue rumahan karena menyediakan bahan berkualitas seperti cokelat, mentega, dan keju impor. Dengan bantuan Grow, Ibu Siti kini lebih mudah memperkenalkan produknya ke komunitas UMKM kuliner di berbagai daerah.",
+        "kontak" : [
+            {"WhatsApp" : "08122983092"},
+            {"Email" : "bahankue_pelangi@gmail.com"}
+        ],
+        "transaksi" : ["Offline", "Dikirim", "COD"],
         "path" : "img/umkm/toko kue.jpg",
         "kategori" : "Makanan",
         "alamat" : "Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)",
