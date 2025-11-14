@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grow</title>
+    <meta name="description" content="Platform untuk menemukan UMKM terbaik dengan cerita, foto, dan lokasi. Menampilkan review dan dukungan untuk UMKM Indonesia.">
+    <title>Grow UMKM - Bertumbuh dan Makmur UMKM Indonesia</title>
+    <link rel="icon" type="image/png" href="img/logo o.png" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/embla-carousel/embla-carousel.umd.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,13 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
 <!-- navbar -->
-<div class="navbar shadow-md md:w-11/12 lg:w-[65%] fixed z-100 left-1/2 top-2 -translate-x-1/2 rounded-2xl px-3 !py-2 !min-h-12 glassmorphism">
+<div class="navbar shadow-md md:w-11/12 lg:w-3/4 fixed z-100 left-1/2 top-2 -translate-x-1/2 rounded-2xl px-3 !py-2 !min-h-12 glassmorphism">
   <div class="navbar-start">
     <div class="dropdown">
      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -64,7 +65,7 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="bg-blue-400 px-3 py-2 rounded-3xl text-white text-sm font-semibold shadow-sm cursor-pointer" data-name="login" onclick="openModal(this)">Bergabung</a>
+    <button class="bg-blue-400 px-3 py-2 rounded-3xl text-white text-sm font-semibold shadow-sm cursor-pointer" data-name="login" onclick="openModal(this)">Bergabung</button>
   </div>
 </div>
 
@@ -111,8 +112,8 @@
 </div>
 
 <!-- second content -->
-<div class="hero " id="containerbFirstContent">
-  <div class="hero-content flex flex-col items-center gap-0">
+<section class="hero !p-0" id="containerbFirstContent" style="content-visibility: auto;">
+  <div class="hero-content 2xl:max-w-[98%] flex flex-col items-center gap-0">
     <div class="flex flex-col md:flex-row gap-4">
     <div class="join">
       <div>
@@ -134,43 +135,43 @@
       <h1 class="text-xl font-medium">Kategory</h1>
       <div class="flex flex-wrap">
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/elektronik-new.jpg" class="w-full mx-auto object-cover" alt="">
+          <img src="img/elektronik-new.jpg" loading="lazy" class="w-full mx-auto object-cover" alt="elektronik">
           <p class="text-xs md:text-sm mt-2">Elektronik</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/makanan.jpg" class="w-[60%] rounded-xl mx-auto aspect-1/1 object-cover object-right" alt="">
+          <img src="img/makanan.jpg" loading="lazy" class="w-[60%] rounded-xl mx-auto aspect-1/1 object-cover object-right" alt="makanan">
           <p class="text-xs md:text-sm mt-2">Makanan</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/minuman.png" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/minuman.webp" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="minuman">
           <p class="text-xs md:text-sm mt-2">Minuman</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/pakaian.webp" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/pakaian.webp" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="pakaian">
           <p class="text-xs md:text-sm mt-2">Pakaian</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/perawatan kecantikan.webp" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/perawatan kecantikan.webp" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="perawatan & kecantikan">
           <p class="text-xs md:text-sm mt-2 leading-4.5">Perawatan & kecantikan</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/peralatan sekolah.png" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/peralatan sekolah.png" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="peralatan sekolah">
           <p class="text-xs md:text-sm mt-2 leading-4.5">Peralatan sekolah</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/kesehatan.jpg" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/kesehatan.jpg" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="kesehatan">
           <p class="text-xs md:text-sm mt-2">Kesehatan</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/olahraga.avif" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/olahraga.avif" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="olahraga">
           <p class="text-xs md:text-sm mt-2">Olahraga</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/otomotif.png" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/otomotif.png" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="otomotif">
           <p class="text-xs md:text-sm mt-2">Otomotif</p>
         </div>
         <div class="w-1/5 md:w-1/10 aspect-3/4 p-1 text-center cursor-pointer">
-          <img src="img/serba-ada.jpg" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="">
+          <img src="img/serba-ada.jpg" loading="lazy" class="w-[60%] mx-auto rounded-xl aspect-1/1 object-cover" alt="serba ada">
           <p class="text-xs md:text-sm mt-2">Serba ada</p>
         </div>
       </div>
@@ -181,7 +182,7 @@
         <!-- card -->
        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm bakso">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -205,7 +206,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/atk.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm peralatan sekolah dan kantor">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -229,7 +230,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <img src="img/umkm/kue.webp" loading="lazy" class="w-full h-full object-cover object-top rounded-md" alt="umkm bahan bahan kue">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -253,7 +254,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/mie ayam.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm mie ayam">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -283,17 +284,17 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- discon content -->
- <div class="hero min-h-screen w-full">
+ <section class="hero min-h-screen w-full" style="content-visibility: auto;">
   <div class="hero-content flex flex-col w-full overflow-hidden">
     <div class="w-full gap-1.5 flex flex-col md:flex-row bg-[url('img/bg.png')] bg-cover bg-center rounded-lg py-2">
       <div class="w-full md:w-[calc(25%-6px)] px-2">
         <h1 class="text-xl font-bold text-gray-800 info-grafis-utama">UMKM Baru<span class="block text-4xl text-blue-500 leading-7">Diskon Spesial! </span></h1>
-        <img src="img/gif kado.gif" class="my-4 w-10" alt="">
+        <img src="img/gif kado.gif" loading="lazy" class="my-4 w-10" alt="diskon">
         <p class="text-xs font-medium text-gray-800">Dukung UMKM baru dan nikmati potongan harga spesial minggu ini</p>
-        <h3 class="text-xl font-semibold text-gray-800 mt-3">Diskon hingga <span class="text-5xl text-blue-500 block leading-9 font-bold">30%</span></h3>
+        <h2 class="text-xl font-semibold text-gray-800 mt-3">Diskon hingga <span class="text-5xl text-blue-500 block leading-9 font-bold">30%</span></h2>
         <button class="px-4 py-2 mt-4 rounded-full bg-white text-blue-500 font-semibold shadow-sm text-sm cursor-pointer" data-name="get-discount" onclick="openModal(this)">ambil kupon</button>
         <div class="w-full flex justify-end gap-1">
           <button class="btn rounded-full px-2 bg-white text-blue-500 shadow-md arrow left"> 
@@ -307,7 +308,7 @@
       <div class="w-full md:w-[calc(75%-6px)] flex flex-row items-start gap-2 px-1 overflow-hidden" id="containerCardDiscount">
         <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm bakso">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -331,7 +332,7 @@
         </div>
         <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/atk.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm peralatan sekolah dan kantor">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -355,7 +356,7 @@
         </div>
         <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <img src="img/umkm/kue.webp" loading="lazy" class="w-full h-full object-cover object-top rounded-md" alt="umkm bahan kue">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -379,7 +380,7 @@
         </div>
         <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/mie ayam.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm mie ayam">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -403,7 +404,7 @@
         </div>
         <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/atk.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm peralatan sekolah dan kantor">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -427,7 +428,7 @@
         </div>
         <div class="flex-none w-[calc(50%-6px)] md:w-[calc(33.33%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm bakso">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -453,12 +454,12 @@
     </div>
 
      <div class="w-full">
-      <h1 class="text-xl font-medium">Terlaris <img src="img/gif fire.gif" class="inline-block -mt-1.5 w-5" alt=""></h1>
+      <h1 class="text-xl font-medium">Terlaris <img src="img/gif fire.gif" loading="lazy" class="inline-block -mt-1.5 w-5" alt=""></h1>
       <div class="flex flex-wrap gap-2 mt-2 overflow-hidden container-card" >
         <!-- card -->
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm bakso">
             <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
               <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
             </div>
@@ -485,7 +486,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/atk.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm peralatan sekolah dan kantor">
            <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
               <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
             </div>
@@ -512,7 +513,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <img src="img/umkm/kue.webp" loading="lazy" class="w-full h-full object-cover object-top rounded-md" alt="umkm bahan bahan kue">
             <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
               <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
             </div>
@@ -539,7 +540,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/mie ayam.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm mie ayam">
             <div class="bg-blue-600 absolute top-0 left-1 w-7 h-5 md:w-10 md:h-7 border border-white before:content[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:md:w-7 before:w-5 before:h-5 before:md:h-7 before:rotate-45 before:border-b before:border-r before:border-white before:bg-blue-600">
               <span class="absolute left-1/2 -translate-x-1/2 text-center text-white text-xs md:text-lg font-semibold">TOP</span>
             </div>
@@ -578,7 +579,7 @@
         <!-- card -->
        <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm bakso">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -602,7 +603,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/atk.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm peralatan sekolah dan kantor">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -626,7 +627,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <img src="img/umkm/kue.webp" loading="lazy" class="w-full h-full object-cover object-top rounded-md" alt="umkm bahan bahan kue">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -650,7 +651,7 @@
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/mie ayam.webp" loading="lazy" class="w-full h-full object-cover rounded-md" alt="umkm mie ayam">
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
           <div class="w-full px-1">
@@ -680,16 +681,16 @@
       </div>
     </div>
   </div>
- </div>
+ </section>
 
 <!-- about content -->  
-<div class="hero min-h-screen w-full my-4" id="containerAbout">
+<article class="hero min-h-screen w-full my-4" id="containerAbout" style="content-visibility: auto;">
   <div class="hero-content w-full flex flex-col">
     <!-- 1 -->
     <div class="flex flex-col md:flex-row w-full gap-2">
       <div class="w-full md:w-1/2 flex flex-col px-1 order-2 md:order-1">
         <div class="">
-          <h3 class="text-sm text-blue-400">Tentang kami</h3>
+          <h1 class="text-sm text-blue-400">Tentang kami</h1>
           <h1 class="info-grafis-about font-semibold text-4xl">GROW UMKM</h1>
           <p class="text-xs md:text-[13px]"> <span class="text-blue-400">&nbsp; Grow UMKM</span> adalah sebuah platform digital yang dirancang untuk memberdayakan pelaku UMKM di seluruh Indonesia melalui promosi,
               peta lokasi usaha, dan data interaktif yang mempertemukan mereka dengan konsumen lokal.</p>
@@ -699,7 +700,7 @@
           </p>
         </div>
         <div class="mt-5">
-          <h3 class="text-sm text-blue-400">Visi Misi</h3>
+          <h1 class="text-sm text-blue-400">Visi Misi</h1>
           <h1 class="info-grafis-about font-semibold text-4xl">Bertumbuh dan Makmur UMKM Indonesia</h1>
           <p class="text-xs md:text-[13px] my-1">&nbsp; Menjadi platform digital yang menumbuhkan dan memakmurkan UMKM Indonesia agar berdaya saing di era ekonomi digital.</p>
           <ul class="text-xs md:text-[13px] mt-2">
@@ -712,7 +713,7 @@
       </div>
       <div class="w-full md:w-1/2 order-1 md:order-2">
         <div class="ml-auto w-3/4 md:w-[60%] aspect-3/4 relative">
-          <img src="img/foto-umkm.jpg" class="w-full h-full object-cover" alt="">
+          <img src="img/foto-umkm.webp" class="w-full h-full object-cover" alt="foto sekilas umkm">
           <div class="absolute left-0 top-1/4 -translate-x-3/4 p-2 md:p-5 bg-white rounded-xl shadow-sm">
             <p class="text-[8px] md:text-[10px] text-gray-500 text-end">14.02 PM</p>
             <div class="w-20 md:w-40 h-1 md:h-2 rounded-lg my-1 skeleton"></div>
@@ -736,75 +737,78 @@
     <!-- 2 -->
     <div class="flex flex-col md:flex-row gap-3 mt-5">
        <div class="w-full md:w-1/2 flex flex-col px-1 order-2 md:order-1">
-          <h3 class="text-lg text-blue-400 leading-4">Langkah awal Grow </h3>
+          <h1 class="text-lg text-blue-400 leading-4">Langkah awal Grow </h1>
           <h1 class="info-grafis-about font-semibold text-4xl mb-3">Menyemai Harapan UMKM Indonesia</h1>
           <p class="text-[13px] mt-1"> &nbsp; Berdiri pada Oktober 2005, Grow lahir dari mimpi sederhana sekelompok anak muda di Surabaya yang ingin melihat UMKM Indonesia tumbuh lebih besar di era digital.</p>
           <p class="text-[13px] mt-1"> &nbsp; Didirikan oleh Komunitas Inovator Muda Nusantara, Grow menjadi jembatan antara pelaku usaha kecil dan masyarakat luas melalui teknologi yang mudah digunakan, transparan, dan memberdayakan.</p>
           <p class="text-[13px] mt-1"> &nbsp; Selama hampir dua dekade, kami berkomitmen membantu ribuan UMKM di seluruh Indonesia untuk naik kelas, menjangkau pasar lebih luas, dan menjadi pilar ekonomi bangsa yang tangguh.</p>
       </div>
       <div class="w-full md:w-1/2 order-1 md:order-2 flex flex-col gap-2 items-end">
-          <img src="img/foto-perusahaan.jpg" class="w-[60%] rounded-md shadow-md opacity-50" id="perusahaan" alt="">
-          <img src="img/foto-anggota.jpg" class="w-[60%] rounded-md -translate-x-1/2 shadow-md opacity-50" id="anggota" alt="">
+          <img src="img/foto-perusahaan.jpg" class="w-[60%] rounded-md shadow-md opacity-50" id="perusahaan" alt="foto perusahaan grow">
+          <img src="img/foto-anggota.webp" class="w-[60%] rounded-md -translate-x-1/2 shadow-md opacity-50" id="anggota" alt="foto karyawan grow">
       </div>
     </div>
     
   </div>
-</div>
-<section id="trigger" class="h-[250vh] mx-auto w-[99%] ">
+</article>
+<section id="trigger" class="h-[250vh] mx-auto w-[99%]" style="content-visibility: auto;">
   <div class="wrapper sticky top-0 h-screen flex items-center justify-center overflow-hidden relative" id="containerImgMemory">
     <div class="flex-none w-[40%] lg:w-1/3 lg:h-screen absolute left-0 top-1/2 lg:top-0 -translate-y-1/8 md:-translate-y-1/2 lg:translate-y-0">
-     <img src="img/Coklat Modern Kenangan Sekolah Instagram Post.png" class="opacity-0 memory" alt="">
+     <img src="img/Coklat Modern Kenangan Sekolah Instagram Post.png" class="opacity-0 memory" alt="foto kerjasama grow dengan umkm">
     </div>
     <div class="flex-none w-[70%] md:w-[60%] lg:w-[27%] h-screen absolute left-1/2 -translate-x-1/2 md:-translate-y-[6%] top-0">
-      <img src="img/Pink Minimalist Foto Kenangan Manis Instagram Post.png" class="opacity-0 memory" alt="">
+      <img src="img/Pink Minimalist Foto Kenangan Manis Instagram Post.png" class="opacity-0 memory" alt="foto kolaborasi antar umkm">
     </div>
     <div class="flex-none w-[70%] md:w-1/2 lg:w-[22%] absolute left-1/2 -translate-x-1/2 bottom-0">
-      <img src="img/Cokelat Krem Kreatif Kenangan Masa Sekolah Dasar Foto Kolase.png"  class="opacity-0 memory" alt="">
+      <img src="img/Cokelat Krem Kreatif Kenangan Masa Sekolah Dasar Foto Kolase.png"  class="opacity-0 memory" alt="foto perjuangan umkm">
     </div>
     <div class="flex-none w-[40%] md:w-[43%] lg:w-1/3 lg:h-screen absolute right-0 top-1/2 lg:top-0 -translate-y-1/8 md:-translate-y-1/2 lg:translate-y-0">
-      <img src="img/Biru tua Modern Kenangan Sekolah Instagram Story.png" class="opacity-0 memory" alt="">
+      <img src="img/Biru tua Modern Kenangan Sekolah Instagram Story.png" class="opacity-0 memory" alt="foto kolaborasi grow, mahasiswa dan grow">
     </div>
     <div id="mid" class="flex-none w-full md:h-1/2 flex flex-col text-center items-center justify-center">
       <h1 class="text-4xl md:text-5xl font-bold">Langkah Kecil <span class="text-blue-400">Dampak Besar </span> </h1>
-        <p class="text-sm mt-3 font-normal">Setiap foto punya cerita,
-      <p class="text-sm font-normal">Tentang semangat, kerja keras, dan harapan UMKM Indonesia yang terus tumbuh bersama Grow.</p>
+        <h2 class="text-sm mt-3 font-normal">Setiap foto punya cerita, </h2>
+      <h2 class="text-sm font-normal">Tentang semangat, kerja keras, dan harapan UMKM Indonesia yang terus tumbuh bersama Grow.</h2>
       <img class="w-1/8 opacity-0 logo-hand" src="img/Logo Platform Tukang Kebersihan Panggilan Monoline Sederhana Abu-abu Tua dan Oranye.png" alt="">
     </div>
   </div>
 </section>
 
 <!-- mitra -->
+<section>
 <h1 class="text-sm text-center mt-15">Didukung oleh mitra terbaik kami</h1>
 <div class="mx-auto w-3/4 grid grid-cols-5 gap-1 mt-4 mb-15">
   <div class="tooltip grayscale hover:grayscale-0 text-center col-span-2 col-start-1 md:col-span-1 md:col-start-1" data-tip="Badan usaha Milik Negara">
     <button class="w-16 md:w-24 px-1 aspect-1/1">
-      <img src="img/bumn.png" class="" alt="">
+      <img src="img/bumn.png" loading="lazy" class="" alt="BUMN sebagai mitra pertama grow">
     </button>
   </div>
   <div class="tooltip grayscale hover:grayscale-0 text-center col-span-2 col-start-4 md:col-span-1 md:col-start-2" data-tip="Universitas Maarif Hasyim Latif">
     <button class="w-16 md:w-22 px-1 aspect-1/1">
-      <img src="img/umaha.jpg" alt="">
+      <img src="img/umaha.jpg" loading="lazy" alt="Universitas Maarif Hasyim Latif sebagai pendorong digitalisasi">
     </button>
   </div>
   <div class="tooltip grayscale hover:grayscale-0 text-center col-span-1 col-start-1 md:col-start-3" data-tip="Bank Rakyat Indonesia">
     <button class="w-16 md:w-24 px-1 aspect-1/1">
-      <img src="img/bri.svg" alt="">
+      <img src="img/bri.svg" loading="lazy" alt="Bank BRI sebagai pemodal bagi pelaku UMKM">
     </button>
   </div>
   <div class="tooltip grayscale hover:grayscale-0 text-center col-span-1 col-start-3 md:col-start-4" data-tip="Komunitas Pemberdayaan UMKM">
     <button class="w-16 md:w-24 px-1 aspect-1/1">
-      <img src="img/pem-umkm.jpg" alt="">
+      <img src="img/pem-umkm.jpg" loading="lazy" alt="Komunitas Pemberdayaan UMKM untuk tempat diskusi antar UMKM">
     </button>
   </div>
   <div class="tooltip grayscale hover:grayscale-0 text-center col-span-1 col-start-5 md:col-start-5" data-tip="Kementrian UMKM">
     <button class="w-14 md:w-22 px-1 aspect-1/1">
-      <img src="img/p-umkm.png" alt="">
+      <img src="img/p-umkm.png" loading="lazy" alt="Kementrian UMKM yang sangat berpengaruh atas berjalan nya grow">
     </button>
   </div>
 </div>
+</section>
+
 
 <!-- contact content -->
-<div class="hero min-h-screen my-8 w-full" id="containerContact">
+<section class="hero min-h-screen my-8 w-full" id="containerContact" style="content-visibility: auto;">
   <div class="hero-content flex flex-col w-full overflow-hidden">
     <div class="w-full text-center">
       <h1 class="text-4xl font-bold text-blue-400">Apa Kata Mereka Tentang <span class="text-black"> Kami</span></h1>
@@ -887,10 +891,10 @@
                   <h1 class="text-white text-2xl font-bold">Suki Mentai</h1>
                 </div>
               </div>
-              <img class="w-full h-full object-cover rounded-t-xl" src="img/umkm/mentai.jpeg" alt="">
+              <img class="w-full h-full object-cover rounded-t-xl" loading="lazy" src="img/umkm/mentai.jpeg" alt="">
             </div>
             <div class="text-start text-sm p-2 bg-blue-50 rounded-b-xl">
-              <img src="img/Screenshot 2025-10-30 162101.png" class="rounded-full w-6" alt="">
+              <img src="img/Screenshot 2025-10-30 162101.png" loading="lazy" class="rounded-full w-6" alt="">
               <p class="text-gray-600">
                 Berawal dari dapur rumah sederhana, Suki Mentai lahir dari hobi seorang ibu muda yang gemar bereksperimen dengan saus mentai. Berkat kegigihan dan promosi melalui Grow, 
                 kini usahanya berkembang pesat dan dikenal banyak orang sebagai sajian rumahan yang lezat, modern, dan terjangkau.
@@ -900,7 +904,7 @@
                   <h1 class="mt-1 font-semibold text-gray-500">Octavia</h1>
                   <h3 class="text-xs text-gray-400">20-09-2025</h3>
                 </div>  
-                <img class="rounded-full object-cover w-12 h-12" src="img/umkm/owner.jpg" alt="">
+                <img class="rounded-full object-cover w-12 h-12" loading="lazy" src="img/umkm/owner.jpg" alt="">
               </div>
             </div>
           </div>
@@ -911,10 +915,10 @@
                   <h1 class="text-white text-2xl font-bold">Mie Ayam Syahdu</h1>
                 </div>
               </div>
-              <img class="w-full h-full object-cover rounded-t-xl" src="img/umkm/mie ayam.jpeg" alt="">
+              <img class="w-full h-full object-cover rounded-t-xl" loading="lazy" src="img/umkm/mie ayam.webp" alt="">
             </div>
             <div class="text-start text-sm p-2 bg-blue-50 rounded-b-xl">
-              <img src="img/Screenshot 2025-10-30 162101.png" class="rounded-full w-6" alt="">
+              <img src="img/Screenshot 2025-10-30 162101.png" loading="lazy" class="rounded-full w-6" alt="">
               <p class="text-gray-600">
                 Dari gerobak kecil di sudut jalan, Mie Ayam Syahdu terus tumbuh dengan cita rasa autentik dan sambal khas buatan sendiri. 
                 Melalui dukungan digital Grow, kini mereka menjangkau pelanggan lebih luas tanpa kehilangan kehangatan dan rasa kebersamaan yang menjadi ciri khasnya.
@@ -924,7 +928,7 @@
                   <h1 class="mt-1 font-semibold text-gray-500">Maulana</h1>
                   <h3 class="text-xs text-gray-400">26-12-2024</h3>
                 </div>  
-                <img class="rounded-full object-cover object-left w-12 h-12" src="img/umkm/owner-mieAyam.jpg" alt="">
+                <img class="rounded-full object-cover object-left w-12 h-12" loading="lazy" src="img/umkm/owner-mieAyam.jpg" alt="">
               </div>
             </div>
           </div>
@@ -935,7 +939,7 @@
     <div class="hero-content flex flex-col w-full p-0" id="wrapperContact">
       <button class="bg-blue-200 text-blue-500 px-2.5 py-1.5 rounded-2xl font-semiboldS text-xs">Hubungi Kami</button>
       <h1 class="text-4xl font-bold text-center">Ada Keluhan? Yuk Laporkan!</h1>
-      <p class="text-xs leading-3.5 text-center">Tim kami siap membantu anda. Kirimkan pesan atau hubungi langsung melalui kontak <br> dibawah ini.</p>
+      <h2 class="text-xs leading-3.5 text-center">Tim kami siap membantu anda. Kirimkan pesan atau hubungi langsung melalui kontak <br> dibawah ini.</h2>
       <div class="w-full md:w-11/12 bg-blue-400 py-7 px-3 text-center rounded-lg">
         <h1 class="text-white text-2xl font-bold text-center">Terhubung dengan Kami</h1>
         <p class="text-white text-xs mt-2">
@@ -990,9 +994,9 @@
       </div>
     </div>  
   </div>
-</div>
+</section>
 
-<dialog id="my_modal_3" class="modal !-w-full min-h-3/4">  
+<dialog id="my_modal_3" class="modal !-w-full min-h-3/4" role="dialog" aria-modal="true" aria-labelledby="modal">  
 </dialog>
 
 <!-- ChatBase ai -->
@@ -1026,22 +1030,23 @@
 <footer class="footer sm:footer-horizontal bg-blue-900 text-neutral-content p-10">
   <nav>
     <h6 class="footer-title">Bantuan</h6>
-    <a class="link link-hover">Promosi</a>
-    <a class="link link-hover">Daftar</a>
-    <a class="link link-hover">Lokasi</a>
-    <a class="link link-hover">Harga</a>
+    <a href="#containerHome" class="link link-hover">Halaman Utama</a>
+    <a href="containerbFirstContent" class="link link-hover">UMKM</a>
+    <a href="containerAbout" class="link link-hover">Tentang</a>
+    <a href="containerContact" class="link link-hover">Kontak</a>
   </nav>
   <nav>
     <h6 class="footer-title">Alamat Perusahaan</h6>
-    <a class="">Jl. Ahmad Yani Batu, Desa Gedang, Kecamatan Sidoarjo <br> Kabupaten Sidoarjo, Jawa Timur. (PT Grow UMKM Indonesia)</a>
+    <span class="">Jl. Ahmad Yani Batu, Desa Gedang, Kecamatan Sidoarjo <br> Kabupaten Sidoarjo, Jawa Timur. (PT Grow UMKM Indonesia)</span>
   </nav>
   <nav>
     <h6 class="footer-title">Media sosial</h6>
-    <a class="link link-hover">Instagram</a>
-    <a class="link link-hover">Facebook</a>
-    <a class="link link-hover">Tiktok</a>
+    <span class="link link-hover">Instagram</span>
+    <span class="link link-hover">Facebook</span>
+    <span class="link link-hover">Tiktok</span>
   </nav>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

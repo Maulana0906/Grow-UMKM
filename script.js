@@ -29,9 +29,15 @@ const buttonShowMore = document.querySelectorAll('.button-lebih-banyak')
 document.addEventListener('click', (el) => {
     if(el.target.classList.contains('button-lebih-banyak')){
         if(!el.target.classList.contains('active')){
-            showMore(el.target)
-        }else {
+            showMore(el.target);
+            setTimeout(() => {
+              ScrollTrigger.refresh();
+            }, 300)
+          }else {
             showLess(el.target)
+            setTimeout(() => {
+              ScrollTrigger.refresh();
+            }, 300)
         }   
     }
 })
@@ -161,62 +167,62 @@ function showLess(button){
 }
 
 // marquee reviews
-function marquee(){
-  marquee1();
-  marquee2();
-}
-function marquee1(){
-  const parent = document.querySelectorAll('.container-card-reviews')[0];
-  const children = parent.children;
-  const clone = parent.innerHTML;
-  let temp;
+function marquee() {
+  const containers = document.querySelectorAll('.container-card-reviews');
+  const marquees = [];
 
-  parent.insertAdjacentHTML('beforeend', clone);
-  parent.insertAdjacentHTML('beforeend', clone);
-  const totalWidth = parent.scrollWidth / 2;
+  containers.forEach((parent, index) => {
+    const clone = parent.innerHTML;
 
-  function scroll(){
-    parent.scrollLeft += 0.6;
-    if(parent.scrollLeft >= totalWidth){
-      parent.scrollLeft = 0
-    }
-    temp = requestAnimationFrame(scroll)
+    parent.insertAdjacentHTML('beforeend', clone);
+    parent.insertAdjacentHTML('beforeend', clone);
+
+    const children = parent.children;
+
+    const totalWidth = parent.scrollWidth / 2;
+
+    const marqueeObj = {
+      parent,
+      totalWidth,
+      speed: 0.6,
+      delay: index === 1 ? 5000 : 0,
+      startTime: null,
+      paused: false
+    };
+
+    marquees.push(marqueeObj);
+
+    Array.from(children).forEach(el => {
+      el.addEventListener("mouseenter", () => (marqueeObj.paused = true));
+      el.addEventListener("mouseleave", () => (marqueeObj.paused = false));
+    });
+  });
+
+  function animate(timestamp) {
+    marquees.forEach(mar => {
+      if (!mar.startTime) mar.startTime = timestamp;
+
+      // apply delay
+      if (timestamp - mar.startTime < mar.delay) return;
+
+      if (!mar.paused) {
+        mar.parent.scrollLeft += mar.speed;
+
+        if (mar.parent.scrollLeft >= mar.totalWidth) {
+          mar.parent.scrollLeft = 0;
+        }
+      }
+    });
+
+    requestAnimationFrame(animate);
   }
-  scroll();
 
-  Array.from(children).forEach(el => {
-    el.addEventListener('mouseover', () => cancelAnimationFrame(temp));
-    el.addEventListener('mouseout', () => scroll());
-  })
+  requestAnimationFrame(animate);
 }
-function marquee2(){
-  const parent = document.querySelectorAll('.container-card-reviews')[1];
-  const children = parent.children;
-  const clone = parent.innerHTML;
-  let temp;
-  const totalWidth = parent.scrollWidth / 2;
-  parent.insertAdjacentHTML('beforeend', clone);
-  parent.insertAdjacentHTML('beforeend', clone);
+
+window.addEventListener("load", marquee);
 
 
-  function scroll(){
-    parent.scrollLeft += 0.6;
-    if(parent.scrollLeft >= totalWidth){
-      parent.scrollLeft = 0
-    }
-    temp = requestAnimationFrame(scroll)
-  }
-  setTimeout(() => {
-    scroll();
-  },5000)
-
-  Array.from(children).forEach(el => {
-    el.addEventListener('mouseover', () => cancelAnimationFrame(temp));
-    el.addEventListener('mouseout', () => scroll());
-  })
-  
-}
-window.addEventListener('load', marquee());
 
 // location -> leaflet.js
 function map(){
@@ -300,7 +306,7 @@ function openModal(btn){
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="deleteModal()">✕</button>
                   </form>
                   <h3 class="text-3xl font-bold">Ambil kuponmu</h3>
-                  <img src="img/kupon.jpg" alt="">
+                  <img src="img/kupon.jpg" loading="lazy" alt="diskon hingga 30% dari UMKM yang baru bergabung">
                   <a href="img/kupon.jpg" download>
                     <button class="btn bg-blue-400 rounded-full  text-white">Download kupon</button>
                   </a>
@@ -373,7 +379,7 @@ async function getdataUMKM(id){
   const uiMenu = data.menu.map(e => {
     return `<li class="flex gap-1">
                           <div class="w-12 h-12">
-                            <img src="${e.path}" class="w-full h-full object-cover object-center rounded-full">
+                            <img src="${e.path}" loading="lazy" alt="${e.nama}" class="w-full h-full object-cover object-center rounded-full">
                           </div>
                           <div class="flex flex-col mt-1">
                             <p class="leading-3.5 ">${e.nama} </p>
@@ -385,7 +391,7 @@ async function getdataUMKM(id){
   const uiTerlaris = data.terlaris.map(e => {
     return `<li class="flex gap-1">
                           <div class="w-12 h-12">
-                            <img src="${e.path}" class="w-full h-full object-cover object-center rounded-full">
+                            <img src="${e.path}" loading="lazy" alt="${e.nama}" class="w-full h-full object-cover object-center rounded-full">
                           </div>
                           <div class="flex flex-col">
                             <p class="leading-3.5 ">${e.nama} </p>
@@ -396,7 +402,7 @@ async function getdataUMKM(id){
   
   const uiKontak = data.kontak.map(e => {
     const [key, value] = Object.entries(e)[0];
-    return `<li> ${key=="WhatsApp"?'<img class="w-5 inline-block" src="img/whatsapp-svg.svg">' : '<img class="w-5 inline-block" src="img/email-svg.svg">'} &nbsp; ${value} </li>`;
+    return `<li> ${key=="WhatsApp"?'<img class="w-5 inline-block" loading="lazy" src="img/whatsapp-svg.svg" alt="WhatsApp">' : '<img class="w-5 inline-block" loading="lazy" alt="Email" src="img/email-svg.svg">'} &nbsp; ${value} </li>`;
   }).join('');
   let badgeStatus = ``;
   
@@ -413,11 +419,20 @@ async function getdataUMKM(id){
   }
   const uiDetail = `<div class="modal-box flex flex-col items-center md:max-w-11/12 lg:max-w-3/4 px-5 pt-10 pb-3">
                   <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="deleteModal()">✕</button>
+                    <button class=" btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="deleteModal()">✕</button>
                   </form>
                   <div class="w-full h-full">
                     <div class="h-72 w-full relative">
-                      <img src="${data.path}" class="w-full h-full object-cover object-center rounded-md "> 
+                      <div class="swiper w-full h-full">
+                        <div class="swiper-wrapper">
+                          ${data.path.map(e => `<img src="${e}" class="w-full h-full object-cover object-center rounded-md swiper-slide" loading="lazy" alt="gambar detail UMKM">`).join('')}
+                        </div>
+
+                        <div class="swiper-button-next text-white"></div>
+                        <div class="swiper-button-prev"></div>
+
+                        <div class="swiper-pagination"></div>
+                      </div>
                     </div>
                     <div class="mt-3 w-full text-gray-700">
                     <div class="w-full flex gap-3 mt-1 mb-3 justify-between md:justify-start"> 
@@ -437,7 +452,7 @@ async function getdataUMKM(id){
                         <div class="w-1/2"> 
                           <h2 class="text-md font-semibold"> Pemesanan : </h2>
                           <ul class="text-sm mt-0.5 ml-3.5 w-full flex flex-col gap-0.5">
-                            ${data.transaksi.map(e => `<li> <img class="w-5.5 inline-block" src="img/${e}.svg"> &nbsp; ${e}</li>`).join('')}
+                            ${data.transaksi.map(e => `<li> <img class="w-5.5 inline-block" loading="lazy" alt="metode transaksi grow " src="img/${e}.svg"> &nbsp; ${e}</li>`).join('')}
                           </ul>
                           <p class="text-xs text-gray-400 mt-1">*Nb : Jika ingin memesan selain secara offline harap hubungi lewat kontak yang tersedia </p>
                         </div>
@@ -457,12 +472,32 @@ async function getdataUMKM(id){
                       <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
                         ${uiTerlaris}
                       </ul>
+                      <div class="w-full flex justify-end"> 
+                        <a href="${data.gMaps}" target="_blank">
+                          <button class="btn btn-info text-white">Rute Google Maps </button>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>  `;
 
   document.getElementById('my_modal_3').innerHTML += uiDetail;
   my_modal_3.showModal();
+  const swiper = new Swiper('.swiper', {
+    loop: true,              
+    autoplay: {
+      delay: 3000,           
+      disableOnInteraction: false, 
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
 }
 // login
 document.addEventListener('click', (el) => {
@@ -682,7 +717,3 @@ gsap.to("#anggota", {
     pinSpacing : true
   }
 });
-
-
-// modal detail
-//menambahkan kontak, dekripsi tentang singkat dan pendiri
