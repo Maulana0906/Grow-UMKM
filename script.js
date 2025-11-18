@@ -1,4 +1,3 @@
-
 var typed = new Typed('#typed', {
   strings: ['Temukan, Dukung dan Tumbuh bersama UMKM Indonesia'],
   typeSpeed: 100,     
@@ -49,7 +48,7 @@ function showMore(button){
   const parent = button.parentElement.previousElementSibling;
     const ui = `<div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/bakso.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/bakso.webp" class="w-full h-full object-cover rounded-md" alt="">
             ${selection}
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
@@ -74,7 +73,7 @@ function showMore(button){
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/atk.jpg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/atk.webp" class="w-full h-full object-cover rounded-md" alt="">
             ${selection}
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
@@ -99,7 +98,7 @@ function showMore(button){
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/kue.jpg" class="w-full h-full object-cover object-top rounded-md" alt="">
+            <img src="img/umkm/kue.webp" class="w-full h-full object-cover object-top rounded-md" alt="">
             ${selection}
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
@@ -124,7 +123,7 @@ function showMore(button){
         </div>
         <div class="w-[calc(50%-6px)] md:w-[calc(25%-6px)] pb-1.5 bg-base-200 rounded-md">
           <div class="w-full aspect-video relative">
-            <img src="img/umkm/mie ayam.jpeg" class="w-full h-full object-cover rounded-md" alt="">
+            <img src="img/umkm/mie ayam.webp" class="w-full h-full object-cover rounded-md" alt="">
             ${selection}
             <div class="absolute bottom-0 left-0 bg-blue-400 p-1 text-white tracking-wider rounded-sm text-[7px] md:text-xs">UMKM</div>
           </div>
@@ -219,10 +218,7 @@ function marquee() {
 
   requestAnimationFrame(animate);
 }
-
 window.addEventListener("load", marquee);
-
-
 
 // location -> leaflet.js
 function map(){
@@ -444,10 +440,20 @@ async function getdataUMKM(id){
                       <p class="text-sm text-justify">${data.deskripsi}</p>
                       <h2 class="text-md font-semibold mt-2"> Jam operasional : </h2>
                       <p class="text-sm mb-4"> ${data.jam_operasi}</p>
-                      <h2 class="text-md font-semibold mt-4"> Kontak : </h2>
-                      <ul class="text-sm mt-0.5 ml-3.5 w-full flex flex-col gap-1">
-                       ${uiKontak}
-                      </ul>
+                      <div class="w-full flex gap-3 my-4"> 
+                        <div class="w-1/2"> 
+                          <h2 class="text-md font-semibold"> Kontak : </h2>
+                          <ul class="text-sm mt-0.5 ml-3.5 w-full flex flex-col gap-1">
+                            ${uiKontak}
+                          </ul>
+                          </div>
+                        <div> 
+                          <h2 class="text-md font-semibold"> Pembayaran : </h2>
+                          <ul class="text-sm mt-0.5 ml-3.5 w-full flex flex-col gap-1">
+                            ${data.pembayaran.map(e => `<li> <img class="inline-block w-6 mr-2" alt="${e}" src="img/logo ${e}.svg"> ${e} </li>`).join('')}
+                          </ul>
+                        </div>
+                      </div>
                       <div class="w-full flex gap-3 my-4"> 
                         <div class="w-1/2"> 
                           <h2 class="text-md font-semibold"> Pemesanan : </h2>
@@ -472,9 +478,14 @@ async function getdataUMKM(id){
                       <ul class="text-xs mt-1 ml-3.5 w-full flex flex-wrap gap-5">
                         ${uiTerlaris}
                       </ul>
-                      <div class="w-full flex justify-end"> 
+                      <div class="w-full flex justify-end gap-3"> 
+                        <button class="btn btn-soft text-gray-600" onclick="shareUMKM()">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 lucide lucide-share2-icon lucide-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                        Share </button>
                         <a href="${data.gMaps}" target="_blank">
-                          <button class="btn btn-info text-white">Rute Google Maps </button>
+                          <button class="btn btn-info text-white">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white lucide lucide-map-icon lucide-map"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+                          Rute Google Maps </button>
                         </a>
                       </div>
                     </div>
@@ -633,6 +644,22 @@ function loadDaftar(btn){
       container.classList.add('bg-green-50')
       break;
   }
+}
+function shareUMKM(){
+  const shareData = {
+    title: "Grow UMKM",
+    text: "Lihat website keren ini!",
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData)
+      .catch(() => console.log("Share dibatalkan"));
+  } else {
+    navigator.clipboard.writeText(shareData.url)
+      .then(() => alert("Browser tidak support share, link disalin!"));
+  }
+
 }
 
 // gsap

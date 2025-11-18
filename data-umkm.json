@@ -11,6 +11,7 @@
             {"Email" : "dimas_pras@gmail.com"}
         ],
         "transaksi" : ["Offline", "Dikirim"],
+        "pembayaran" : ["Qris", "Cash"],
         "kategori" : "Makanan",
         "alamat" : "Jl. Ahm Yani RT 05 RW 03 Ds. Bulang Kec. Sidoarjo (Depan lapangan bola)",
         "gMaps" : "https://maps.app.goo.gl/rJHUAUGSuxigRHBr9",
@@ -76,6 +77,7 @@
             {"WhatsApp" : "081220983092"}
         ],
         "transaksi" : ["Offline", "Dikirim", "COD"],
+        "pembayaran" : ["Cash"],
         "kategori" : "Peralatan sekolah",
         "alamat" : "Jl. Brawijaya RT 01 RW 02 Ds. gemulung Kec. Sidoarjo (Depan polsek Sidoarjo)",
         "gMaps" : "https://maps.app.goo.gl/9yCbr9zHACbav3z87",
@@ -133,6 +135,7 @@
             {"Email" : "superBakso_maulana@gmail.com"}
         ],
         "transaksi" : ["Offline", "Dikirim"],
+        "pembayaran" : ["Qris", "Cash"],
         "kategori" : "Makanan",
         "alamat" : " Jl. Brawijaya RT 01 RW 02 Ds. Sidorejo Kec. Sidoarjo (Depan pabrik Maspion)",
         "gMaps" : "https://maps.app.goo.gl/vfaMr75BqMMgEFfV7",
@@ -205,6 +208,7 @@
             {"Email" : "bahankue_pelangi@gmail.com"}
         ],
         "transaksi" : ["Offline", "Dikirim", "COD"],
+        "pembayaran" : ["Qris", "Cash"],
         "path" : ["img/umkm/toko kue.jpg", "img/umkm/pelangi kue/slide-2.jpg", "img/umkm/pelangi kue/slide-3.webp"],
         "kategori" : "Makanan",
         "alamat" : "Jl. Pramuka RT 05 RW 01 Ds. Gamping Kec. Sidoarjo (Samping sekolah SMP)",

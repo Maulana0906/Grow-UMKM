@@ -112,16 +112,25 @@ border: 1px solid rgba(255, 255, 255, 0.397);
   border-radius: 100%;
   width: 35px;
   height: 35px;
-  box-shadow: 1px 1px 5px #555;
   opacity: 40%;
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   scale: 105%;
+  opacity: 100%;
+  color: white;
+  background-color: rgb(118, 150, 255); ;
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 13px;
   line-height: 0; 
-  opacity: 100%;
+}
+
+#coloringIcon{
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.215);
+border-radius: 100%;  
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
 }
